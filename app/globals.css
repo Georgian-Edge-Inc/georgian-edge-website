@@ -47,3 +47,7 @@
   .requestPanel{gap:14px;padding:44px 0 28px}.requestPhoto{min-height:250px;border-radius:24px}.requestCard,.requestSteps{padding:22px;border-radius:22px}.requestCard h2{font-size:2.2rem}.trustStrip{border-radius:18px;padding:15px}
   .photoMasonry{columns:2 145px;column-gap:10px;padding-bottom:62px}.photoMasonry figure{border-radius:16px;margin-bottom:10px}
 }
+
+/* Accessibility and motion-safety pass */
+:focus-visible{outline:3px solid #e3c98d;outline-offset:4px;border-radius:8px}.btn:focus-visible,.maintenanceEmail:focus-visible,.navlinks a:focus-visible{outline-color:#fff;box-shadow:0 0 0 3px rgba(31,61,50,.72)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.heroCard,.heroCard img,.service:nth-child(even),.serviceDetail:nth-child(even),.gallery img:nth-child(2n){transform:none!important}}
