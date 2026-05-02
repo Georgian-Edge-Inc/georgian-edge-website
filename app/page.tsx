@@ -103,6 +103,13 @@ export default function Home() {
           garden cleanups, landscape refreshes, planting, pruning, cottage support,
           property management, and aerial property photography around Georgian Bay.
         </p>
+        <div className="maintenanceActions">
+          <a className="btn light" href="/request-work">Request work</a>
+          <a className="maintenanceEmail" href="mailto:georgianedgeinc@gmail.com">Email Georgian Edge</a>
+        </div>
+        <p className="maintenanceServiceArea">
+          Serving Georgian Bay, Collingwood, The Blue Mountains, Wasaga Beach, Thornbury, Meaford, and surrounding cottage properties.
+        </p>
         <div className="maintenanceFooter">
           <span>Premium property care • Landscapes • Cottage support • Georgian Bay</span>
         </div>
