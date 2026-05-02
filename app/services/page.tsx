@@ -53,7 +53,6 @@ const serviceAreas = [
   { '@type': 'AdministrativeArea', name: 'Georgian Bay, Ontario' },
   { '@type': 'City', name: 'Collingwood' },
   { '@type': 'City', name: 'The Blue Mountains' },
-  { '@type': 'City', name: 'Wasaga Beach' },
   { '@type': 'City', name: 'Thornbury' },
   { '@type': 'City', name: 'Meaford' },
   { '@type': 'AdministrativeArea', name: 'Clearview' },

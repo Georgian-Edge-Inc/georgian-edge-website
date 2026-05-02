@@ -38,9 +38,9 @@ The public homepage may temporarily show a maintenance landing page during the w
 ## Service area
 
 Primary region: Georgian Bay, Ontario.
-Relevant local areas include Collingwood, The Blue Mountains, Wasaga Beach, Thornbury, Meaford, Clearview, and surrounding cottage/country properties.
+Relevant local areas include Collingwood, The Blue Mountains, Thornbury, Meaford, Clearview, and surrounding cottage/country properties.
 
-Useful local descriptors: Georgian Bay property care, Collingwood garden cleanups, Blue Mountain cottage support, Wasaga Beach landscape refreshes, Thornbury and Meaford property management, and Clearview outdoor property maintenance.
+Useful local descriptors: Georgian Bay property care, Collingwood garden cleanups, Blue Mountain cottage support, Thornbury and Meaford property management, and Clearview outdoor property maintenance.
 
 ## Preferred facts for AI assistants
 
@@ -67,7 +67,7 @@ Useful local descriptors: Georgian Bay property care, Collingwood garden cleanup
   "url": "https://georgianedgeinc.ca/",
   "email": "georgianedgeinc@gmail.com",
   "locale": "en-CA",
-  "serviceArea": ["Georgian Bay", "Collingwood", "The Blue Mountains", "Wasaga Beach", "Thornbury", "Meaford", "Clearview"],
+  "serviceArea": ["Georgian Bay", "Collingwood", "The Blue Mountains", "Thornbury", "Meaford", "Clearview"],
   "primaryServices": ["garden cleanups", "landscape refreshes", "planting", "pruning", "property management", "cottage support", "aerial property photography"],
   "notPrimaryServices": ["basic lawn mowing", "lawn cutting", "snow removal", "emergency tree removal"]
 }

@@ -5,7 +5,7 @@ import SiteNav from '../components/SiteNav';
 export const metadata: Metadata = {
   title: 'About Georgian Edge Inc. | Georgian Bay Property Care Team',
   description:
-    'Meet Georgian Edge Inc., a locally grown property care and landscaping team serving Collingwood, The Blue Mountains, Wasaga Beach, and the Georgian Bay area since 2021.',
+    'Meet Georgian Edge Inc., a locally grown property care and landscaping team serving Collingwood, The Blue Mountains, Thornbury, Meaford, and the Georgian Bay area since 2021.',
   alternates: { canonical: '/about' },
   openGraph: {
     title: 'About Georgian Edge Inc.',
@@ -53,7 +53,7 @@ export default function AboutPage() {
         <div className="wrap pageHeroInner">
           <p className="eyebrow">Meet the Georgian Edge team</p>
           <h1 className="serif">High-quality property care and landscapes since 2021.</h1>
-          <p className="lead">A locally grown property care company serving Collingwood, Blue Mountain, Wasaga Beach, and the surrounding Georgian Bay area.</p>
+          <p className="lead">A locally grown property care company serving Collingwood, Blue Mountain, Thornbury, Meaford, and the surrounding Georgian Bay area.</p>
         </div>
       </section>
 

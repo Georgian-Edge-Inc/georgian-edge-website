@@ -20,7 +20,6 @@ const localBusinessSchema = {
         { '@type': 'AdministrativeArea', name: 'Georgian Bay, Ontario' },
         { '@type': 'City', name: 'Collingwood' },
         { '@type': 'City', name: 'The Blue Mountains' },
-        { '@type': 'City', name: 'Wasaga Beach' },
         { '@type': 'City', name: 'Thornbury' },
         { '@type': 'City', name: 'Meaford' },
         { '@type': 'AdministrativeArea', name: 'Clearview' },
@@ -108,7 +107,7 @@ export default function Home() {
           <a className="maintenanceEmail" href="mailto:georgianedgeinc@gmail.com">Email Georgian Edge</a>
         </div>
         <p className="maintenanceServiceArea">
-          Serving Georgian Bay, Collingwood, The Blue Mountains, Wasaga Beach, Thornbury, Meaford, and surrounding cottage properties.
+          Serving Georgian Bay, Collingwood, The Blue Mountains, Thornbury, Meaford, and surrounding cottage properties.
         </p>
         <div className="maintenanceFooter">
           <span>Premium property care • Landscapes • Cottage support • Georgian Bay</span>

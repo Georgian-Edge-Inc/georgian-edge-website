@@ -16,7 +16,6 @@ export const metadata: Metadata = {
     'Georgian Bay landscaping',
     'Collingwood landscaping',
     'Blue Mountain property care',
-    'Wasaga Beach landscaping',
     'garden cleanups',
     'mulch installation',
     'landscape refreshes',
