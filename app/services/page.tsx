@@ -27,7 +27,7 @@ const services = [
     icon: Trees,
     title: 'Landscape builds & refreshes',
     text: 'Design-forward garden beds, planting areas, stone accents, edging, soil, mulch, refreshes, and finishing details that create a complete outdoor space.',
-    bullets: ['New garden bed builds', 'Planting layouts and refreshes', 'Pond-edge and muskrat-damage repairs'], 
+    bullets: ['New garden bed builds', 'Planting layouts and refreshes', 'Pond-edge and muskrat-damage repairs'],
   },
   {
     icon: Sprout,
@@ -39,7 +39,7 @@ const services = [
     icon: MapPin,
     title: 'Property management',
     text: 'Reliable cottage and country property support for owners who need inspections, seasonal opening/closing help, outdoor care coordination, and details handled without chasing everything themselves.',
-    bullets: ['Property inspections and check-ins', 'Seasonal opening and closing support', 'Outdoor care coordination'], 
+    bullets: ['Property inspections and check-ins', 'Seasonal opening and closing support', 'Outdoor care coordination'],
   },
   {
     icon: Camera,
@@ -49,9 +49,66 @@ const services = [
   },
 ];
 
+const serviceAreas = [
+  { '@type': 'AdministrativeArea', name: 'Georgian Bay, Ontario' },
+  { '@type': 'City', name: 'Collingwood' },
+  { '@type': 'City', name: 'The Blue Mountains' },
+  { '@type': 'City', name: 'Wasaga Beach' },
+  { '@type': 'City', name: 'Thornbury' },
+  { '@type': 'City', name: 'Meaford' },
+  { '@type': 'AdministrativeArea', name: 'Clearview' },
+];
+
+const servicesSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': 'https://georgianedgeinc.ca/services#webpage',
+      url: 'https://georgianedgeinc.ca/services',
+      name: 'Georgian Edge Inc. services',
+      description:
+        'Outdoor property care, garden cleanups, landscape refreshes, planting, pruning, cottage support, property management, and aerial property photography around Georgian Bay, Ontario.',
+      inLanguage: 'en-CA',
+      isPartOf: { '@id': 'https://georgianedgeinc.ca/#website' },
+      about: { '@id': 'https://georgianedgeinc.ca/#business' },
+    },
+    {
+      '@type': 'ItemList',
+      '@id': 'https://georgianedgeinc.ca/services#service-list',
+      name: 'Georgian Bay property care services',
+      itemListElement: services.map((service, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: service.title,
+        item: {
+          '@type': 'Service',
+          name: service.title,
+          description: service.text,
+          provider: { '@id': 'https://georgianedgeinc.ca/#business' },
+          areaServed: serviceAreas,
+          serviceType: service.title,
+        },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': 'https://georgianedgeinc.ca/services#breadcrumbs',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://georgianedgeinc.ca/' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://georgianedgeinc.ca/services' },
+      ],
+    },
+  ],
+};
+
 export default function ServicesPage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
+      />
       <section className="pageHero servicesHero">
         <SiteNav />
         <div className="wrap pageHeroInner">

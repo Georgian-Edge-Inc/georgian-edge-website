@@ -18,9 +18,44 @@ export const metadata: Metadata = {
 
 const jobberRequestUrl = 'https://clienthub.getjobber.com/hubs/4dddfa75-84ac-4cd0-b8af-250b1a49d53c/public/requests/304805/new';
 
+const requestWorkSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ContactPage',
+      '@id': 'https://georgianedgeinc.ca/request-work#webpage',
+      url: 'https://georgianedgeinc.ca/request-work',
+      name: 'Request work from Georgian Edge Inc.',
+      description:
+        'Start a quote request for Georgian Edge Inc. property care, garden cleanup, landscape refresh, planting, pruning, property management, cottage support, or aerial property photography services.',
+      inLanguage: 'en-CA',
+      isPartOf: { '@id': 'https://georgianedgeinc.ca/#website' },
+      about: { '@id': 'https://georgianedgeinc.ca/#business' },
+      potentialAction: {
+        '@type': 'CommunicateAction',
+        name: 'Request property care work',
+        target: 'https://georgianedgeinc.ca/request-work',
+        recipient: { '@id': 'https://georgianedgeinc.ca/#business' },
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': 'https://georgianedgeinc.ca/request-work#breadcrumbs',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://georgianedgeinc.ca/' },
+        { '@type': 'ListItem', position: 2, name: 'Request work', item: 'https://georgianedgeinc.ca/request-work' },
+      ],
+    },
+  ],
+};
+
 export default function RequestWorkPage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(requestWorkSchema) }}
+      />
       <section className="pageHero requestHero">
         <SiteNav />
         <div className="wrap pageHeroInner">
