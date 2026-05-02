@@ -56,7 +56,7 @@ export default function RequestWorkPage() {
       <section className="cta wrap">
         <h2 className="serif">Not ready to fill out the form?</h2>
         <p>You can still email directly and we’ll point you in the right direction.</p>
-        <Link className="btn primary" href="mailto:georgianedgelandscaping@gmail.com">Email Georgian Edge</Link>
+        <Link className="btn primary" href="mailto:georgianedgeinc@gmail.com">Email Georgian Edge</Link>
       </section>
     </main>
   );

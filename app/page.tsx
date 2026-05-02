@@ -43,6 +43,16 @@ const localBusinessSchema = {
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Property management', areaServed: 'Georgian Bay, Ontario' } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Aerial property photography', areaServed: 'Georgian Bay, Ontario' } },
       ],
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Georgian Bay property care services',
+        itemListElement: [
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Seasonal garden and property cleanups' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Landscape refreshes, bed edging, mulch, and planting' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Cottage and country property management' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Aerial property photography and progress documentation' } },
+        ],
+      },
     },
     {
       '@type': 'WebSite',
@@ -51,6 +61,21 @@ const localBusinessSchema = {
       name: 'Georgian Edge Inc.',
       inLanguage: 'en-CA',
       publisher: { '@id': 'https://georgianedgeinc.ca/#business' },
+    },
+    {
+      '@type': 'WebPage',
+      '@id': 'https://georgianedgeinc.ca/#homepage',
+      url: 'https://georgianedgeinc.ca/',
+      name: 'Georgian Edge Inc. maintenance landing page',
+      description:
+        'Temporary maintenance landing page for Georgian Edge Inc. while the public website refresh is in progress.',
+      inLanguage: 'en-CA',
+      isPartOf: { '@id': 'https://georgianedgeinc.ca/#website' },
+      about: { '@id': 'https://georgianedgeinc.ca/#business' },
+      primaryImageOfPage: {
+        '@type': 'ImageObject',
+        url: 'https://georgianedgeinc.ca/brand/georgian-edge-primary-white.png',
+      },
     },
   ],
 };
