@@ -51,8 +51,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/brand/georgian-edge-primary-black.png',
-        width: 1200,
-        height: 630,
+        width: 576,
+        height: 576,
         alt: 'Georgian Edge Inc. logo',
       },
     ],
