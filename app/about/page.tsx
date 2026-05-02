@@ -15,9 +15,39 @@ export const metadata: Metadata = {
   },
 };
 
+const aboutSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'AboutPage',
+      '@id': 'https://georgianedgeinc.ca/about#webpage',
+      url: 'https://georgianedgeinc.ca/about',
+      name: 'About Georgian Edge Inc.',
+      description:
+        'Company story and team background for Georgian Edge Inc., a locally grown Georgian Bay property care and landscaping business founded in 2021.',
+      inLanguage: 'en-CA',
+      isPartOf: { '@id': 'https://georgianedgeinc.ca/#website' },
+      about: { '@id': 'https://georgianedgeinc.ca/#business' },
+      mainEntity: { '@id': 'https://georgianedgeinc.ca/#business' },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': 'https://georgianedgeinc.ca/about#breadcrumbs',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://georgianedgeinc.ca/' },
+        { '@type': 'ListItem', position: 2, name: 'About', item: 'https://georgianedgeinc.ca/about' },
+      ],
+    },
+  ],
+};
+
 export default function AboutPage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
+      />
       <section className="pageHero aboutHero existingAboutHero">
         <SiteNav />
         <div className="wrap pageHeroInner">

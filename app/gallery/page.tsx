@@ -26,9 +26,49 @@ const photos = Array.from({ length: 38 }, (_, index) => {
   };
 }).filter((photo) => !hiddenPhotoNumbers.has(photo.number));
 
+const gallerySchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ImageGallery',
+      '@id': 'https://georgianedgeinc.ca/gallery#webpage',
+      url: 'https://georgianedgeinc.ca/gallery',
+      name: 'Georgian Edge Inc. project gallery',
+      description:
+        'Project photos from Georgian Edge Inc. garden cleanups, edging, stonework, planting, landscape refreshes, and outdoor property care around Georgian Bay.',
+      inLanguage: 'en-CA',
+      isPartOf: { '@id': 'https://georgianedgeinc.ca/#website' },
+      about: { '@id': 'https://georgianedgeinc.ca/#business' },
+      primaryImageOfPage: {
+        '@type': 'ImageObject',
+        url: 'https://georgianedgeinc.ca/photos/stephen-uploaded/georgian-edge-owned-01.jpg',
+      },
+      associatedMedia: photos.slice(0, 12).map((photo) => ({
+        '@type': 'ImageObject',
+        contentUrl: `https://georgianedgeinc.ca${photo.src}`,
+        name: photo.alt,
+        description: photo.alt,
+        creator: { '@id': 'https://georgianedgeinc.ca/#business' },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': 'https://georgianedgeinc.ca/gallery#breadcrumbs',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://georgianedgeinc.ca/' },
+        { '@type': 'ListItem', position: 2, name: 'Gallery', item: 'https://georgianedgeinc.ca/gallery' },
+      ],
+    },
+  ],
+};
+
 export default function GalleryPage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(gallerySchema) }}
+      />
       <section className="pageHero galleryHero">
         <SiteNav />
         <div className="wrap pageHeroInner">
