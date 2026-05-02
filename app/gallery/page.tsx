@@ -17,12 +17,24 @@ export const metadata: Metadata = {
 
 const hiddenPhotoNumbers = new Set(['31']);
 
+const photoAltText: Record<string, string> = {
+  '01': 'Freshly built Georgian Edge garden bed with clean edges and landscape finishing',
+  '02': 'Natural stone patio and garden edging completed by Georgian Edge',
+  '03': 'Large Georgian Bay property with landscaped gardens and open lawn',
+  '04': 'Clean curved garden bed edge around mature trees',
+  '07': 'Foundation garden bed with shrubs and dark mulch',
+  '08': 'Fresh lawn edge and walkway after property maintenance',
+  '09': 'Decorative stone feature in a gravel garden',
+  '10': 'Gravel garden refresh with decorative stone features',
+  '20': 'Georgian Edge landscape refresh and outdoor property care project',
+};
+
 const photos = Array.from({ length: 38 }, (_, index) => {
   const number = String(index + 1).padStart(2, '0');
   return {
     number,
     src: `/photos/stephen-uploaded/georgian-edge-owned-${number}.jpg`,
-    alt: `Georgian Edge Inc. project photo ${number}`,
+    alt: photoAltText[number] ?? `Georgian Edge Inc. garden, landscape, and property care project photo ${number}`,
   };
 }).filter((photo) => !hiddenPhotoNumbers.has(photo.number));
 
