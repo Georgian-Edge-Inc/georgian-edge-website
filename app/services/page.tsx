@@ -13,6 +13,21 @@ export const metadata: Metadata = {
     url: '/services',
     description:
       'Garden cleanups, landscape refreshes, planting, pruning, property management, cottage support, and aerial property photography around Georgian Bay.',
+    images: [
+      {
+        url: '/photos/stephen-uploaded/georgian-edge-owned-02.jpg',
+        width: 959,
+        height: 1280,
+        alt: 'Georgian Edge landscape and property care project detail',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Services | Georgian Edge Inc.',
+    description:
+      'Garden cleanups, landscape refreshes, planting, pruning, property management, cottage support, and aerial property photography around Georgian Bay.',
+    images: ['/photos/stephen-uploaded/georgian-edge-owned-02.jpg'],
   },
 };
 

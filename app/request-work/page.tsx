@@ -13,6 +13,21 @@ export const metadata: Metadata = {
     url: '/request-work',
     description:
       'Share your property details, timing, photos, and the outdoor work or property management support you want quoted.',
+    images: [
+      {
+        url: '/photos/stephen-uploaded/georgian-edge-owned-06.jpg',
+        width: 721,
+        height: 1280,
+        alt: 'Georgian Edge Inc. property care request and project work',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Request Work | Georgian Edge Inc.',
+    description:
+      'Share your property details, timing, photos, and the outdoor work or property management support you want quoted.',
+    images: ['/photos/stephen-uploaded/georgian-edge-owned-06.jpg'],
   },
 };
 

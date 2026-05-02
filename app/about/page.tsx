@@ -12,6 +12,21 @@ export const metadata: Metadata = {
     url: '/about',
     description:
       'Local Georgian Bay property care, landscape refresh, garden cleanup, and cottage support from Stephen, Kassidy, and the Georgian Edge team.',
+    images: [
+      {
+        url: '/photos/existing-site/about-team.png',
+        width: 1864,
+        height: 1909,
+        alt: 'Stephen and Kassidy from Georgian Edge Inc.',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Georgian Edge Inc.',
+    description:
+      'Local Georgian Bay property care, landscape refresh, garden cleanup, and cottage support from Stephen, Kassidy, and the Georgian Edge team.',
+    images: ['/photos/existing-site/about-team.png'],
   },
 };
 

@@ -11,11 +11,21 @@ export const metadata: Metadata = {
     url: '/',
     description:
       'The public homepage is temporarily under maintenance. Georgian Edge Inc. remains active for Georgian Bay property care, landscape refreshes, cottage support, and aerial property photography.',
+    images: [
+      {
+        url: '/photos/stephen-uploaded/georgian-edge-owned-03.jpg',
+        width: 959,
+        height: 1280,
+        alt: 'Georgian Bay property cared for by Georgian Edge Inc.',
+      },
+    ],
   },
   twitter: {
+    card: 'summary_large_image',
     title: 'Georgian Edge Inc. | Website Refresh in Progress',
     description:
       'Georgian Edge Inc. remains active for Georgian Bay property care, landscape refreshes, cottage support, and aerial property photography while the website is refreshed.',
+    images: ['/photos/stephen-uploaded/georgian-edge-owned-03.jpg'],
   },
 };
 

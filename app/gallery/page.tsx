@@ -12,6 +12,21 @@ export const metadata: Metadata = {
     url: '/gallery',
     description:
       'Real Georgian Edge project photos from garden beds, cleanups, landscape refreshes, and outdoor property care.',
+    images: [
+      {
+        url: '/photos/stephen-uploaded/georgian-edge-owned-20.jpg',
+        width: 1280,
+        height: 959,
+        alt: 'Georgian Edge Inc. landscape and property care project photo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Gallery | Georgian Edge Inc.',
+    description:
+      'Real Georgian Edge project photos from garden beds, cleanups, landscape refreshes, and outdoor property care.',
+    images: ['/photos/stephen-uploaded/georgian-edge-owned-20.jpg'],
   },
 };
 
