@@ -1,3 +1,12 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy',
+  description: 'Privacy policy for Georgian Edge Inc. website, social media, quote requests, messages, and related business tools.',
+  alternates: { canonical: '/privacy-policy' },
+  robots: { index: false, follow: true },
+};
+
 export default function PrivacyPolicyPage() {
   return (
     <main className="policy wrap">

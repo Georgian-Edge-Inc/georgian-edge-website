@@ -1,3 +1,12 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Data Deletion Instructions',
+  description: 'How to request deletion of personal information submitted to Georgian Edge Inc. through website, email, Facebook, Instagram, or other channels.',
+  alternates: { canonical: '/data-deletion' },
+  robots: { index: false, follow: true },
+};
+
 export default function DataDeletionPage() {
   return (
     <main className="policy wrap">

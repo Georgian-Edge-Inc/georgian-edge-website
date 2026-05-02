@@ -25,10 +25,21 @@ export const metadata: Metadata = {
   ],
   applicationName: 'Georgian Edge Inc.',
   authors: [{ name: 'Georgian Edge Inc.' }],
+  category: 'home services',
+  classification: 'Property care, landscaping, garden cleanup, cottage property management, and aerial property photography',
   creator: 'Georgian Edge Inc.',
   publisher: 'Georgian Edge Inc.',
+  referrer: 'origin-when-cross-origin',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   alternates: {
     canonical: '/',
+    languages: {
+      'en-CA': '/',
+    },
   },
   openGraph: {
     type: 'website',
@@ -68,6 +79,12 @@ export const metadata: Metadata = {
   icons: {
     icon: '/meta-app-icon.png',
     apple: '/meta-app-icon-512.png',
+  },
+  manifest: '/manifest.webmanifest',
+  appleWebApp: {
+    capable: true,
+    title: 'Georgian Edge Inc.',
+    statusBarStyle: 'black-translucent',
   },
 };
 

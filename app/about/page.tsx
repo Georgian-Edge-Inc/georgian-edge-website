@@ -1,5 +1,19 @@
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import SiteNav from '../components/SiteNav';
+
+export const metadata: Metadata = {
+  title: 'About Georgian Edge Inc. | Georgian Bay Property Care Team',
+  description:
+    'Meet Georgian Edge Inc., a locally grown property care and landscaping team serving Collingwood, The Blue Mountains, Wasaga Beach, and the Georgian Bay area since 2021.',
+  alternates: { canonical: '/about' },
+  openGraph: {
+    title: 'About Georgian Edge Inc.',
+    url: '/about',
+    description:
+      'Local Georgian Bay property care, landscape refresh, garden cleanup, and cottage support from Stephen, Kassidy, and the Georgian Edge team.',
+  },
+};
 
 export default function AboutPage() {
   return (

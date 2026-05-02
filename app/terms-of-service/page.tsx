@@ -1,3 +1,12 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Terms of Service',
+  description: 'Terms of service for Georgian Edge Inc. website, quote requests, messages, and related online services.',
+  alternates: { canonical: '/terms-of-service' },
+  robots: { index: false, follow: true },
+};
+
 export default function TermsOfServicePage() {
   return (
     <main className="policy wrap">

@@ -1,6 +1,20 @@
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import { Camera, CheckCircle2, Leaf, MapPin, Sprout, Trees } from 'lucide-react';
 import SiteNav from '../components/SiteNav';
+
+export const metadata: Metadata = {
+  title: 'Services | Property Care, Landscape Refreshes & Cottage Support',
+  description:
+    'Explore Georgian Edge Inc. services around Georgian Bay: garden cleanups, mulch installation, landscape builds and refreshes, planting, pruning, property management, cottage support, and aerial property photography.',
+  alternates: { canonical: '/services' },
+  openGraph: {
+    title: 'Services | Georgian Edge Inc.',
+    url: '/services',
+    description:
+      'Garden cleanups, landscape refreshes, planting, pruning, property management, cottage support, and aerial property photography around Georgian Bay.',
+  },
+};
 
 const services = [
   {

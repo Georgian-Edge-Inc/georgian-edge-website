@@ -1,6 +1,20 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { ArrowRight, ClipboardList, ShieldCheck } from 'lucide-react';
 import SiteNav from '../components/SiteNav';
+
+export const metadata: Metadata = {
+  title: 'Request Work | Georgian Edge Inc.',
+  description:
+    'Request a Georgian Edge Inc. quote for garden cleanups, landscape refreshes, planting, pruning, property management, cottage support, aerial property photography, and outdoor property care.',
+  alternates: { canonical: '/request-work' },
+  openGraph: {
+    title: 'Request Work | Georgian Edge Inc.',
+    url: '/request-work',
+    description:
+      'Share your property details, timing, photos, and the outdoor work or property management support you want quoted.',
+  },
+};
 
 const jobberRequestUrl = 'https://clienthub.getjobber.com/hubs/4dddfa75-84ac-4cd0-b8af-250b1a49d53c/public/requests/304805/new';
 

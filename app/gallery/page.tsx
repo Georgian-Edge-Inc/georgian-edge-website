@@ -1,5 +1,19 @@
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import SiteNav from '../components/SiteNav';
+
+export const metadata: Metadata = {
+  title: 'Gallery | Georgian Bay Landscape & Property Care Photos',
+  description:
+    'View Georgian Edge Inc. project photos showing garden cleanups, edging, stonework, planting, landscape builds, property refreshes, and outdoor property care around Georgian Bay.',
+  alternates: { canonical: '/gallery' },
+  openGraph: {
+    title: 'Gallery | Georgian Edge Inc.',
+    url: '/gallery',
+    description:
+      'Real Georgian Edge project photos from garden beds, cleanups, landscape refreshes, and outdoor property care.',
+  },
+};
 
 const hiddenPhotoNumbers = new Set(['31']);
 
