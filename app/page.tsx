@@ -149,7 +149,20 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }}
       />
-      <section className="hero">
+      <section className="hero heroWithVideo">
+        <div className="heroVideo" aria-hidden="true">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="/videos/georgian-edge-hero-drone-poster.jpg"
+          >
+            <source src="/videos/georgian-edge-hero-drone-loop.webm" type="video/webm" />
+            <source src="/videos/georgian-edge-hero-drone-loop.mp4" type="video/mp4" />
+          </video>
+        </div>
         <SiteNav />
         <div className="heroInner wrap">
           <div className="heroCopy">
