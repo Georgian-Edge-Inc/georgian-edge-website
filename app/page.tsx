@@ -1,35 +1,66 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import type { Metadata } from 'next';
+import { ArrowRight, Camera, Leaf, MapPin, Sprout, Trees } from 'lucide-react';
+import SiteNav from './components/SiteNav';
 
 export const metadata: Metadata = {
-  title: 'Website Refresh in Progress | Georgian Edge Inc.',
+  title: 'Georgian Edge Inc. | Georgian Bay Property Care & Landscaping',
   description:
-    'Georgian Edge Inc. is refreshing its website while continuing to accept property care, garden cleanup, landscape refresh, cottage support, and aerial photography requests around Georgian Bay.',
+    'Premium Georgian Bay property care, garden cleanups, landscape refreshes, planting, pruning, cottage support, property management, and aerial property photography.',
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Georgian Edge Inc. | Website Refresh in Progress',
+    title: 'Georgian Edge Inc. | Georgian Bay Property Care & Landscaping',
     url: '/',
     description:
-      'The public homepage is temporarily under maintenance. Georgian Edge Inc. remains active for Georgian Bay property care, landscape refreshes, cottage support, and aerial property photography.',
+      'Premium property care, garden cleanups, landscape refreshes, planting, pruning, cottage support, property management, and aerial photography around Georgian Bay.',
     images: [
       {
         url: '/photos/stephen-uploaded/georgian-edge-owned-03.jpg',
         width: 959,
         height: 1280,
-        alt: 'Georgian Bay property cared for by Georgian Edge Inc.',
+        alt: 'Large Georgian Bay property with landscaped gardens and open lawn',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Georgian Edge Inc. | Website Refresh in Progress',
+    title: 'Georgian Edge Inc. | Georgian Bay Property Care & Landscaping',
     description:
-      'Georgian Edge Inc. remains active for Georgian Bay property care, landscape refreshes, cottage support, and aerial property photography while the website is refreshed.',
+      'Premium Georgian Bay property care, landscape refreshes, garden cleanups, cottage support, and aerial property photography.',
     images: ['/photos/stephen-uploaded/georgian-edge-owned-03.jpg'],
   },
 };
 
-const localBusinessSchema = {
+const services = [
+  {
+    icon: Leaf,
+    title: 'Garden cleanups',
+    text: 'Seasonal resets, bed cleanup, edging, soil prep, and detail work that makes the whole property feel cared for.',
+  },
+  {
+    icon: Trees,
+    title: 'Landscape builds & refreshes',
+    text: 'Design-forward garden beds, planting areas, stone accents, edging, soil, mulch, refreshes, and finishing details that create a complete outdoor space.',
+  },
+  {
+    icon: Sprout,
+    title: 'Planting & pruning',
+    text: 'Thoughtful planting, pruning, and ongoing garden maintenance that fits the property instead of fighting it.',
+  },
+  {
+    icon: MapPin,
+    title: 'Property management',
+    text: 'Reliable cottage and country property support: inspections, seasonal opening/closing help, outdoor care coordination, and details handled without chasing everything yourself.',
+  },
+  {
+    icon: Camera,
+    title: 'Aerial property photography',
+    text: 'Aerial property photography for progress, listings, seasonal records, transformations, and larger property planning.',
+  },
+];
+
+const homeSchema = {
   '@context': 'https://schema.org',
   '@graph': [
     {
@@ -61,33 +92,18 @@ const localBusinessSchema = {
         { '@type': 'City', name: 'Meaford' },
         { '@type': 'AdministrativeArea', name: 'Clearview' },
       ],
-      serviceType: [
-        'Garden cleanup',
-        'Spring and fall property cleanup',
-        'Mulch installation',
-        'Garden maintenance',
-        'Landscape refreshes',
-        'Planting',
-        'Pruning',
-        'Property management',
-        'Cottage property support',
-        'Aerial property photography',
-      ],
-      makesOffer: [
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Garden cleanups', areaServed: 'Georgian Bay, Ontario' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Landscape refreshes', areaServed: 'Georgian Bay, Ontario' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Property management', areaServed: 'Georgian Bay, Ontario' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Aerial property photography', areaServed: 'Georgian Bay, Ontario' } },
-      ],
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
         name: 'Georgian Bay property care services',
-        itemListElement: [
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Seasonal garden and property cleanups' } },
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Landscape refreshes, bed edging, mulch, and planting' } },
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Cottage and country property management' } },
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Aerial property photography and progress documentation' } },
-        ],
+        itemListElement: services.map((service) => ({
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: service.title,
+            areaServed: 'Georgian Bay, Ontario',
+            provider: { '@id': 'https://georgianedgeinc.ca/#business' },
+          },
+        })),
       },
       potentialAction: {
         '@type': 'CommunicateAction',
@@ -112,20 +128,15 @@ const localBusinessSchema = {
       '@type': 'WebPage',
       '@id': 'https://georgianedgeinc.ca/#homepage',
       url: 'https://georgianedgeinc.ca/',
-      name: 'Georgian Edge Inc. maintenance landing page',
+      name: 'Georgian Edge Inc. homepage',
       description:
-        'Temporary maintenance landing page for Georgian Edge Inc. while the public website refresh is in progress.',
+        'Homepage for Georgian Edge Inc., a Georgian Bay property care, landscaping, cottage support, and aerial property photography business.',
       inLanguage: 'en-CA',
       isPartOf: { '@id': 'https://georgianedgeinc.ca/#website' },
       about: { '@id': 'https://georgianedgeinc.ca/#business' },
-      potentialAction: {
-        '@type': 'CommunicateAction',
-        name: 'Request work from Georgian Edge Inc.',
-        target: 'https://georgianedgeinc.ca/request-work',
-      },
       primaryImageOfPage: {
         '@type': 'ImageObject',
-        url: 'https://georgianedgeinc.ca/brand/georgian-edge-primary-white.png',
+        url: 'https://georgianedgeinc.ca/photos/stephen-uploaded/georgian-edge-owned-03.jpg',
       },
     },
   ],
@@ -133,37 +144,100 @@ const localBusinessSchema = {
 
 export default function Home() {
   return (
-    <main className="maintenancePage">
+    <main>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }}
       />
-      <section className="maintenanceCard" aria-label="Georgian Edge website under maintenance">
-        <Image
-          src="/brand/georgian-edge-primary-white.png"
-          alt="Georgian Edge Inc."
-          width={520}
-          height={190}
-          priority
-          className="maintenanceLogo"
-        />
-        <p className="maintenanceEyebrow">Website refresh in progress</p>
-        <h1 className="serif">We&rsquo;re building something sharper for Georgian Bay properties.</h1>
-        <p className="maintenanceText">
-          Georgian Edge Inc. is updating our online home for premium property care,
-          garden cleanups, landscape refreshes, planting, pruning, cottage support,
-          property management, and aerial property photography around Georgian Bay.
-        </p>
-        <div className="maintenanceActions" id="contact">
-          <a className="btn light" href="/request-work">Request work</a>
-          <a className="maintenanceEmail" href="mailto:georgianedgeinc@gmail.com">Email Georgian Edge</a>
+      <section className="hero">
+        <SiteNav />
+        <div className="heroInner wrap">
+          <div className="heroCopy">
+            <p className="eyebrow">Georgian Edge Inc.</p>
+            <h1 className="serif">Premium property care and management for Georgian Bay homes and cottages.</h1>
+            <p className="lead">
+              Garden cleanups, design-forward landscape builds and refreshes, planting, pruning, property management,
+              aerial property photography, and owner support with a clean, established Georgian Bay feel.
+            </p>
+            <div className="actions">
+              <Link className="btn light" href="/request-work">
+                Request work <ArrowRight size={18} />
+              </Link>
+              <a className="textLink" href="#work">See recent work</a>
+            </div>
+          </div>
+          <div className="heroCard">
+            <Image
+              src="/photos/stephen-uploaded/georgian-edge-owned-03.jpg"
+              alt="Large Georgian Bay property with landscaped gardens and open lawn"
+              fill
+              priority
+              sizes="(max-width: 860px) 100vw, 48vw"
+            />
+          </div>
         </div>
-        <p className="maintenanceServiceArea">
-          Serving Georgian Bay, Collingwood, The Blue Mountains, Thornbury, Meaford, and surrounding cottage properties.
-        </p>
-        <div className="maintenanceFooter">
-          <span>Premium property care • Landscapes • Cottage support • Georgian Bay</span>
+      </section>
+
+      <section className="intro wrap">
+        <div>
+          <p className="eyebrow">Properties, handled properly</p>
+          <h2 className="serif">Not just outdoor work — a sharper, calmer property.</h2>
         </div>
+        <p>
+          Georgian Edge helps bring structure back to gardens, paths, beds, seasonal outdoor spaces, and the property
+          itself. The focus is practical, polished care for owners who want reliable inspections, coordination, and eyes
+          on the place when needed.
+        </p>
+      </section>
+
+      <section id="services" className="services wrap" aria-label="Georgian Edge services">
+        {services.map(({ icon: Icon, title, text }) => (
+          <article className="service" key={title}>
+            <Icon size={25} aria-hidden="true" />
+            <h3>{title}</h3>
+            <p>{text}</p>
+          </article>
+        ))}
+      </section>
+      <div className="wrap centerLink">
+        <Link className="btn primary" href="/services">View all services</Link>
+      </div>
+
+      <section id="about" className="homeAbout wrap">
+        <div>
+          <p className="eyebrow">About us</p>
+          <h2 className="serif">A local property care team focused on cleaner, calmer homes, cottages, and outdoor spaces.</h2>
+        </div>
+        <div>
+          <p>
+            Georgian Edge Inc. works with country homes, cottages, and Georgian Bay properties that need detailed outdoor
+            care and management: garden cleanups, landscape builds and refreshes, planting, pruning, property inspections,
+            seasonal support, and owner peace of mind.
+          </p>
+          <Link className="btn primary" href="/about">Learn more about Georgian Edge</Link>
+        </div>
+      </section>
+
+      <section id="work" className="work">
+        <div className="wrap workHead">
+          <p className="eyebrow">Recent refresh</p>
+          <h2 className="serif">A broader look at gardens, beds, stonework, planting, and cared-for Georgian Bay properties.</h2>
+        </div>
+        <div className="gallery wrap" aria-label="Selected Georgian Edge project photos">
+          <Image src="/photos/stephen-uploaded/georgian-edge-owned-02.jpg" alt="Natural stone patio and garden edging completed by Georgian Edge" width={600} height={760} />
+          <Image src="/photos/stephen-uploaded/georgian-edge-owned-10.jpg" alt="Gravel garden refresh with decorative stone features" width={600} height={760} />
+          <Image src="/photos/stephen-uploaded/georgian-edge-owned-04.jpg" alt="Clean curved garden bed edge around mature trees" width={600} height={760} />
+          <Image src="/photos/stephen-uploaded/georgian-edge-owned-07.jpg" alt="Foundation garden bed with shrubs and dark mulch" width={600} height={760} />
+          <Image src="/photos/stephen-uploaded/georgian-edge-owned-08.jpg" alt="Fresh lawn edge and walkway after property maintenance" width={600} height={760} />
+          <Image src="/photos/stephen-uploaded/georgian-edge-owned-09.jpg" alt="Decorative stone feature in a gravel garden" width={600} height={760} />
+        </div>
+      </section>
+
+      <section id="contact" className="cta wrap">
+        <Image src="/brand/georgian-edge-brandmark-black.png" alt="" width={86} height={86} />
+        <h2 className="serif">Ready to clean up, refresh, inspect, or manage your property?</h2>
+        <p>Tell us what your property needs and we’ll help shape the next step.</p>
+        <Link className="btn primary" href="/request-work">Request work</Link>
       </section>
     </main>
   );
