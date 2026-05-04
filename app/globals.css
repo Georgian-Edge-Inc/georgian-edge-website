@@ -43,7 +43,7 @@
   .cta{padding:42px 18px 48px;margin:42px auto;border-radius:26px}.cta .btn{width:100%}
   .pageHero{min-height:auto;padding-bottom:42px;border-bottom-left-radius:24px;border-bottom-right-radius:24px}.pageHeroInner{padding-top:26px}.pageHero h1{font-size:clamp(2.45rem,13vw,3.35rem);line-height:.96}.pageHero .lead{font-size:1rem}
   .serviceDetailGrid{gap:12px;padding:44px 0}.serviceDetail{padding:22px;border-radius:22px}.serviceDetail h2{font-size:1.45rem}.serviceDetail p{line-height:1.6}
-  .splitFeature,.aboutStory,.galleryIntro{gap:22px;padding:48px 0}.splitFeature img,.aboutStory img{height:330px;border-radius:24px}.values{gap:12px;padding-bottom:44px}.values article{padding:22px;border-radius:20px}
+  .splitFeature,.aboutStory,.galleryIntro{gap:22px;padding:48px 0}.splitFeature img,.aboutStory img{height:330px;border-radius:24px}.aboutStory img{height:auto;max-height:none;object-fit:contain;object-position:center}.values{gap:12px;padding-bottom:44px}.values article{padding:22px;border-radius:20px}
   .requestPanel{gap:14px;padding:44px 0 28px}.requestPhoto{min-height:250px;border-radius:24px}.requestCard,.requestSteps{padding:22px;border-radius:22px}.requestCard h2{font-size:2.2rem}.trustStrip{border-radius:18px;padding:15px}
   .photoMasonry{columns:2 145px;column-gap:10px;padding-bottom:62px}.photoMasonry figure{border-radius:16px;margin-bottom:10px}
 }

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       {
         url: '/photos/existing-site/about-team-new.jpg',
         width: 1200,
-        height: 1000,
+        height: 1091,
         alt: 'Stephen and Kassidy from Georgian Edge Inc.',
       },
     ],
@@ -88,7 +88,7 @@ export default function AboutPage() {
           <p>Kassidy grew up on her family farm just outside Rocklyn, Ontario. Years of watching her parents work hard, sacrifice, and grow thriving businesses from their passions helped fuel her own love for working outside and building something to be proud of.</p>
           <p>Together, with a combined 15+ years of experience, Stephen and Kassidy have grown a landscaping business they’re proud to put their name on. With satisfied clients and a hardworking crew, Georgian Edge is continuing to grow the quality, care, and service it brings to local properties.</p>
         </div>
-        <Image src="/photos/existing-site/about-team-new.jpg" alt="Stephen and Kassidy from Georgian Edge Inc. beside the Georgian Edge trailer" width={1200} height={1000} />
+        <Image src="/photos/existing-site/about-team-new.jpg" alt="Stephen and Kassidy from Georgian Edge Inc. beside the Georgian Edge trailer" width={1200} height={1091} />
       </section>
 
       <section className="values wrap">
