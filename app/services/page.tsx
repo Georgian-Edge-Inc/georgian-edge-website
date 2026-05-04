@@ -2,6 +2,7 @@ import Image from 'next/image';
 import type { Metadata } from 'next';
 import { Camera, CheckCircle2, Leaf, MapPin, Sprout, Trees } from 'lucide-react';
 import SiteNav from '../components/SiteNav';
+import PageHeroVideo from '../components/PageHeroVideo';
 
 export const metadata: Metadata = {
   title: 'Services | Property Care, Landscape Refreshes & Cottage Support',
@@ -123,7 +124,13 @@ export default function ServicesPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
       />
-      <section className="pageHero servicesHero">
+      <section className="pageHero pageHeroWithVideo servicesHero">
+        <PageHeroVideo
+          name="Georgian Edge landscape maintenance background video"
+          poster="/videos/georgian-edge-services-loop-poster.jpg"
+          webm="/videos/georgian-edge-services-loop.webm"
+          mp4="/videos/georgian-edge-services-loop.mp4"
+        />
         <SiteNav />
         <div className="wrap pageHeroInner">
           <p className="eyebrow">Services</p>

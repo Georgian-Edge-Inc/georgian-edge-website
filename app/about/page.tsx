@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import SiteNav from '../components/SiteNav';
+import PageHeroVideo from '../components/PageHeroVideo';
 
 export const metadata: Metadata = {
   title: 'About Georgian Edge Inc. | Georgian Bay Property Care Team',
@@ -14,9 +15,9 @@ export const metadata: Metadata = {
       'Local Georgian Bay property care, landscape refresh, garden cleanup, and cottage support from Stephen, Kassidy, and the Georgian Edge team.',
     images: [
       {
-        url: '/photos/existing-site/about-team.png',
-        width: 1864,
-        height: 1909,
+        url: '/photos/existing-site/about-team-new.jpg',
+        width: 1200,
+        height: 1000,
         alt: 'Stephen and Kassidy from Georgian Edge Inc.',
       },
     ],
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     title: 'About Georgian Edge Inc.',
     description:
       'Local Georgian Bay property care, landscape refresh, garden cleanup, and cottage support from Stephen, Kassidy, and the Georgian Edge team.',
-    images: ['/photos/existing-site/about-team.png'],
+    images: ['/photos/existing-site/about-team-new.jpg'],
   },
 };
 
@@ -63,7 +64,13 @@ export default function AboutPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
       />
-      <section className="pageHero aboutHero existingAboutHero">
+      <section className="pageHero pageHeroWithVideo aboutHero existingAboutHero">
+        <PageHeroVideo
+          name="Soft Georgian Edge garden flower background video"
+          poster="/videos/georgian-edge-garden-loop-poster.jpg"
+          webm="/videos/georgian-edge-garden-loop.webm"
+          mp4="/videos/georgian-edge-garden-loop.mp4"
+        />
         <SiteNav />
         <div className="wrap pageHeroInner">
           <p className="eyebrow">Meet the Georgian Edge team</p>
@@ -81,7 +88,7 @@ export default function AboutPage() {
           <p>Kassidy grew up on her family farm just outside Rocklyn, Ontario. Years of watching her parents work hard, sacrifice, and grow thriving businesses from their passions helped fuel her own love for working outside and building something to be proud of.</p>
           <p>Together, with a combined 15+ years of experience, Stephen and Kassidy have grown a landscaping business they’re proud to put their name on. With satisfied clients and a hardworking crew, Georgian Edge is continuing to grow the quality, care, and service it brings to local properties.</p>
         </div>
-        <Image src="/photos/existing-site/about-team.png" alt="Stephen and Kassidy from Georgian Edge Inc." width={900} height={920} />
+        <Image src="/photos/existing-site/about-team-new.jpg" alt="Stephen and Kassidy from Georgian Edge Inc. beside the Georgian Edge trailer" width={1200} height={1000} />
       </section>
 
       <section className="values wrap">

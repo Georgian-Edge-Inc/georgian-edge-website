@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import SiteNav from '../components/SiteNav';
+import PageHeroVideo from '../components/PageHeroVideo';
 
 export const metadata: Metadata = {
   title: 'Gallery | Georgian Bay Landscape & Property Care Photos',
@@ -96,7 +97,13 @@ export default function GalleryPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(gallerySchema) }}
       />
-      <section className="pageHero galleryHero">
+      <section className="pageHero pageHeroWithVideo galleryHero">
+        <PageHeroVideo
+          name="Georgian Edge project showcase background video"
+          poster="/videos/georgian-edge-gallery-loop-poster.jpg"
+          webm="/videos/georgian-edge-gallery-loop.webm"
+          mp4="/videos/georgian-edge-gallery-loop.mp4"
+        />
         <SiteNav />
         <div className="wrap pageHeroInner">
           <p className="eyebrow">Gallery</p>
