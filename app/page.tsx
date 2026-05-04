@@ -60,6 +60,11 @@ const services = [
   },
 ];
 
+const phoneDisplay = '705-441-1215';
+const phoneHref = 'tel:+17054411215';
+const facebookUrl = 'https://www.facebook.com/GeorgianEdgeLandscaping/';
+const instagramUrl = 'https://www.instagram.com/georgianedgeinc/';
+
 const homeSchema = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -74,10 +79,13 @@ const homeSchema = {
       image: 'https://georgianedgeinc.ca/brand/georgian-edge-primary-black.png',
       logo: 'https://georgianedgeinc.ca/brand/georgian-edge-primary-black.png',
       email: 'georgianedgeinc@gmail.com',
+      telephone: '+1-705-441-1215',
+      sameAs: [facebookUrl, instagramUrl],
       contactPoint: {
         '@type': 'ContactPoint',
         contactType: 'customer service and work requests',
         email: 'georgianedgeinc@gmail.com',
+        telephone: '+1-705-441-1215',
         areaServed: 'CA-ON',
         availableLanguage: ['en-CA'],
         url: 'https://georgianedgeinc.ca/request-work',
@@ -176,6 +184,7 @@ export default function Home() {
               <Link className="btn light" href="/request-work">
                 Request work <ArrowRight size={18} />
               </Link>
+              <a className="textLink" href={phoneHref}>{phoneDisplay}</a>
               <a className="textLink" href="#work">See recent work</a>
             </div>
           </div>
@@ -250,7 +259,12 @@ export default function Home() {
         <Image src="/brand/georgian-edge-brandmark-black.png" alt="" width={86} height={86} />
         <h2 className="serif">Ready to clean up, refresh, inspect, or manage your property?</h2>
         <p>Tell us what your property needs and we’ll help shape the next step.</p>
-        <Link className="btn primary" href="/request-work">Request work</Link>
+        <div className="contactActions">
+          <Link className="btn primary" href="/request-work">Request work</Link>
+          <a className="contactLink" href={phoneHref}>{phoneDisplay}</a>
+          <a className="contactLink" href={facebookUrl} target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a className="contactLink" href={instagramUrl} target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
       </section>
     </main>
   );

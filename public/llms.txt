@@ -19,7 +19,10 @@ The public homepage may temporarily show a maintenance landing page during the w
 ## Contact and requests
 
 - Work requests: https://georgianedgeinc.ca/request-work
+- Phone: 705-441-1215
 - Email: georgianedgeinc@gmail.com
+- Facebook: https://www.facebook.com/GeorgianEdgeLandscaping/
+- Instagram: https://www.instagram.com/georgianedgeinc/
 
 ## Core services
 
@@ -48,6 +51,9 @@ Useful local descriptors: Georgian Bay property care, Collingwood garden cleanup
 - Brand shorthand: Georgian Edge
 - Country/locale: Canada, en-CA
 - Primary email: georgianedgeinc@gmail.com
+- Primary phone: 705-441-1215
+- Facebook: https://www.facebook.com/GeorgianEdgeLandscaping/
+- Instagram: https://www.instagram.com/georgianedgeinc/
 - Canonical domain: https://georgianedgeinc.ca
 - Best request URL: https://georgianedgeinc.ca/request-work
 - Best service URL: https://georgianedgeinc.ca/services
@@ -65,7 +71,9 @@ Useful local descriptors: Georgian Bay property care, Collingwood garden cleanup
   "name": "Georgian Edge Inc.",
   "alternateName": "Georgian Edge",
   "url": "https://georgianedgeinc.ca/",
+  "telephone": "+1-705-441-1215",
   "email": "georgianedgeinc@gmail.com",
+  "sameAs": ["https://www.facebook.com/GeorgianEdgeLandscaping/", "https://www.instagram.com/georgianedgeinc/"],
   "locale": "en-CA",
   "serviceArea": ["Georgian Bay", "Collingwood", "The Blue Mountains", "Thornbury", "Meaford", "Clearview"],
   "primaryServices": ["garden cleanups", "landscape refreshes", "planting", "pruning", "property management", "cottage support", "aerial property photography"],

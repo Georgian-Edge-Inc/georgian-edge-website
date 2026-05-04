@@ -32,6 +32,10 @@ export const metadata: Metadata = {
 };
 
 const jobberRequestUrl = 'https://clienthub.getjobber.com/hubs/4dddfa75-84ac-4cd0-b8af-250b1a49d53c/public/requests/304805/new';
+const phoneDisplay = '705-441-1215';
+const phoneHref = 'tel:+17054411215';
+const facebookUrl = 'https://www.facebook.com/GeorgianEdgeLandscaping/';
+const instagramUrl = 'https://www.instagram.com/georgianedgeinc/';
 
 const requestWorkSchema = {
   '@context': 'https://schema.org',
@@ -105,8 +109,13 @@ export default function RequestWorkPage() {
 
       <section className="cta wrap">
         <h2 className="serif">Not ready to fill out the form?</h2>
-        <p>You can still email directly and we’ll point you in the right direction.</p>
-        <Link className="btn primary" href="mailto:georgianedgeinc@gmail.com">Email Georgian Edge</Link>
+        <p>You can still call, email, or reach Georgian Edge through Facebook and Instagram.</p>
+        <div className="contactActions">
+          <a className="btn primary" href={phoneHref}>Call {phoneDisplay}</a>
+          <Link className="contactLink" href="mailto:georgianedgeinc@gmail.com">Email</Link>
+          <a className="contactLink" href={facebookUrl} target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a className="contactLink" href={instagramUrl} target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
       </section>
     </main>
   );

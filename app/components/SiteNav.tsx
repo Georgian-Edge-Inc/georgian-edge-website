@@ -12,6 +12,7 @@ export default function SiteNav({ light = false }: { light?: boolean }) {
         <Link href="/about">About</Link>
         <Link href="/gallery">Gallery</Link>
         <Link href="/request-work">Request Work</Link>
+        <a href="tel:+17054411215">705-441-1215</a>
         <Link href="/#contact">Contact</Link>
       </div>
     </nav>
