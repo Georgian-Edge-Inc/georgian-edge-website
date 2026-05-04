@@ -23,21 +23,25 @@ function InstagramIcon() {
 export default function SiteNav({ light = false }: { light?: boolean }) {
   return (
     <nav className={`nav wrap ${light ? 'navDark' : ''}`} aria-label="Primary navigation">
-      <Link href="/" aria-label="Georgian Edge home">
-        <Image src={light ? "/brand/georgian-edge-primary-black.png" : "/brand/georgian-edge-primary-white.png"} alt="Georgian Edge Inc." width={180} height={90} className="logo" priority />
-      </Link>
+      <div className="navTopRow">
+        <Link href="/" aria-label="Georgian Edge home">
+          <Image src={light ? "/brand/georgian-edge-primary-black.png" : "/brand/georgian-edge-primary-white.png"} alt="Georgian Edge Inc." width={180} height={90} className="logo" priority />
+        </Link>
+        <div className="navContact">
+          <a className="navPhone" href="tel:+17054411215">705-441-1215</a>
+          <a className="socialIcon" href={facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Georgian Edge on Facebook">
+            <FacebookIcon />
+          </a>
+          <a className="socialIcon" href={instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Georgian Edge on Instagram">
+            <InstagramIcon />
+          </a>
+        </div>
+      </div>
       <div className="navlinks">
         <Link href="/services">Services</Link>
         <Link href="/about">About</Link>
         <Link href="/gallery">Gallery</Link>
         <Link href="/request-work">Request Work</Link>
-        <a href="tel:+17054411215">705-441-1215</a>
-        <a className="socialIcon" href={facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Georgian Edge on Facebook">
-          <FacebookIcon />
-        </a>
-        <a className="socialIcon" href={instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Georgian Edge on Instagram">
-          <InstagramIcon />
-        </a>
       </div>
     </nav>
   );
