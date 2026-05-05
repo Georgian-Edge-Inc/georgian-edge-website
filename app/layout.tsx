@@ -1,5 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/next';
 
 const siteUrl = 'https://georgianedgeinc.ca';
 
@@ -88,5 +89,12 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="en-CA"><body>{children}</body></html>;
+  return (
+    <html lang="en-CA">
+      <body>
+        {children}
+        <Analytics />
+      </body>
+    </html>
+  );
 }
