@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { ArrowRight, Camera, Leaf, MapPin, Sprout, Star, Trees } from 'lucide-react';
+import { ArrowRight, Camera, Leaf, MapPin, Quote, Sprout, Star, Trees } from 'lucide-react';
 import SiteNav from './components/SiteNav';
 
 export const metadata: Metadata = {
@@ -67,33 +67,113 @@ const facebookReviewsUrl = 'https://www.facebook.com/GeorgianEdgeLandscaping/rev
 const googleReviewUrl = 'https://g.page/r/CUB04VSzUFVdEAE/review';
 const instagramUrl = 'https://www.instagram.com/georgianedgeinc/';
 
-const clientReviews = [
+export const revalidate = 3600;
+
+type ClientReview = {
+  name: string;
+  date?: string;
+  text: string;
+  rating: number;
+  profilePhotoUrl?: string;
+  source: 'Google';
+};
+
+type ReviewSummary = {
+  rating: number;
+  total: number;
+  live: boolean;
+};
+
+const fallbackReviews: ClientReview[] = [
   {
     name: 'Mike Ryan',
     date: '2023-02-03',
     text: 'The attention to detail that Kassidy and Stephen show is remarkable! They seemingly read your mind to provide results beyond your wildest dreams…I wholeheartedly recommend this team!',
+    rating: 5,
+    profilePhotoUrl: 'https://lh3.googleusercontent.com/a/ACg8ocKD0VcFAN9N2UUWvM3jmoPKXqOQ07WtPbhDXbMvVmvF=w40-h40-c-rp-mo-br100',
+    source: 'Google',
   },
   {
     name: 'Jamilyn Johnston',
     date: '2022-09-05',
     text: "I can't say enough great things about this company! They completely redid our gardens in time for our upcoming wedding and made them look gorgeous. One of the most professional, fun, and talented group of landscapers around, I highly recommend!",
+    rating: 5,
+    profilePhotoUrl: 'https://lh3.googleusercontent.com/a-/ALV-UjWxN0F6oswyOg8fI_55oxrZfe8wEPOruywAu2pRk1p0LMA=w40-h40-c-rp-mo-br100',
+    source: 'Google',
   },
   {
     name: 'Chris Brittain',
     date: '2021-04-26',
     text: 'I highly recommend Georgian Edge for all landscaping needs. They have been doing a great job with our lawn care services, and we look forward to using them for landscaping projects throughout this year. Stephen is responsive and on time, making it easy to work with him.',
+    rating: 5,
+    profilePhotoUrl: 'https://lh3.googleusercontent.com/a/ACg8ocKobNmdkiUEu_27Q6KFcuXbwHfXcbL9wxno4dF-mACP=w40-h40-c-rp-mo-br100',
+    source: 'Google',
   },
   {
     name: 'Heather McFarlane',
     date: '2021-04-19',
     text: 'Amazing job!!! Stephen did a great job with my yard clean up. Super friendly, experienced and very responsive. Looking forward to booking any future landscaping needs with him!',
+    rating: 5,
+    profilePhotoUrl: 'https://lh3.googleusercontent.com/a/ACg8ocI8gCyV9U9R5Q2nbVaphCt4tqImZDK4d9yUzrPlvY_-=w40-h40-c-rp-mo-br100',
+    source: 'Google',
   },
   {
     name: 'Kyle Spencley',
     date: '2021-04-14',
     text: 'Amazing job with our gardens. Very experienced and lots of attention to detail. Went above and beyond! Will be booking this service every year.',
+    rating: 5,
+    profilePhotoUrl: 'https://lh3.googleusercontent.com/a/ACg8ocKIjE-DZgUgK4oYDeptvYf7892S5Ah8b3_FmbM1qvva=w40-h40-c-rp-mo-br100',
+    source: 'Google',
   },
 ];
+
+async function getGoogleReviews(): Promise<{ reviews: ClientReview[]; summary: ReviewSummary }> {
+  const apiKey = process.env.GOOGLE_PLACES_API_KEY;
+  const placeId = process.env.GOOGLE_PLACE_ID;
+
+  if (!apiKey || !placeId) {
+    return { reviews: fallbackReviews, summary: { rating: 4.4, total: 7, live: false } };
+  }
+
+  try {
+    const params = new URLSearchParams({
+      place_id: placeId,
+      fields: 'rating,user_ratings_total,reviews,url',
+      reviews_sort: 'newest',
+      key: apiKey,
+    });
+    const response = await fetch(`https://maps.googleapis.com/maps/api/place/details/json?${params.toString()}`, {
+      next: { revalidate: 43200 },
+    });
+    const data = await response.json();
+
+    if (!response.ok || data.status !== 'OK' || !data.result) {
+      return { reviews: fallbackReviews, summary: { rating: 4.4, total: 7, live: false } };
+    }
+
+    const liveReviews = (data.result.reviews || [])
+      .filter((review: { text?: string }) => review.text)
+      .map((review: { author_name?: string; profile_photo_url?: string; rating?: number; relative_time_description?: string; text: string }) => ({
+        name: review.author_name || 'Google reviewer',
+        date: review.relative_time_description,
+        text: review.text,
+        rating: review.rating || 5,
+        profilePhotoUrl: review.profile_photo_url,
+        source: 'Google' as const,
+      }));
+
+    return {
+      reviews: liveReviews.length ? liveReviews : fallbackReviews,
+      summary: {
+        rating: data.result.rating || 4.4,
+        total: data.result.user_ratings_total || 7,
+        live: Boolean(liveReviews.length),
+      },
+    };
+  } catch {
+    return { reviews: fallbackReviews, summary: { rating: 4.4, total: 7, live: false } };
+  }
+}
 
 const homeSchema = {
   '@context': 'https://schema.org',
@@ -187,7 +267,9 @@ const homeSchema = {
   ],
 };
 
-export default function Home() {
+export default async function Home() {
+  const { reviews, summary } = await getGoogleReviews();
+
   return (
     <main>
       <script
@@ -279,26 +361,52 @@ export default function Home() {
 
       <section id="reviews" className="reviews" aria-label="Georgian Edge client reviews">
         <div className="wrap reviewIntro">
-          <p className="eyebrow">From our clients</p>
-          <h2 className="serif">Real words from Georgian Edge clients.</h2>
+          <div>
+            <p className="eyebrow">Client reviews</p>
+            <h2 className="serif">Proof from the people who’ve worked with us.</h2>
+          </div>
           <p>
-            A scrolling set of Google reviews carried over from the Georgian Edge Landscaping site, with quick links to
-            view or leave fresh recommendations on Google and Facebook.
+            {summary.live
+              ? 'Fresh Google reviews update automatically, with profile photos and ratings pulled directly from Google.'
+              : 'A polished review section is ready now. Add the Google Places API key and Place ID in Vercel and new reviews will flow in automatically.'}
           </p>
         </div>
+
+        <div className="wrap reviewSummary">
+          <div className="reviewScore" aria-label={`Google rating ${summary.rating} out of 5`}>
+            <strong>{summary.rating.toFixed(1)}</strong>
+            <span>
+              <span className="reviewStars compactStars" aria-hidden="true">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <Star key={index} size={14} />
+                ))}
+              </span>
+              Google rating · {summary.total} reviews
+            </span>
+          </div>
+          <span className={summary.live ? 'reviewLiveBadge isLive' : 'reviewLiveBadge'}>
+            {summary.live ? 'Live Google sync' : 'Google sync ready'}
+          </span>
+        </div>
+
         <div className="reviewRail" aria-label="Scrollable client review cards">
-          {clientReviews.map((review) => (
-            <article className="reviewCard" key={review.name}>
+          {reviews.map((review) => (
+            <article className="reviewCard" key={`${review.name}-${review.text.slice(0, 18)}`}>
               <div className="reviewCardTop">
-                <span className="reviewIcon" aria-hidden="true"><Star size={21} /></span>
+                {review.profilePhotoUrl ? (
+                  <img className="reviewAvatar" src={review.profilePhotoUrl} alt="" loading="lazy" />
+                ) : (
+                  <span className="reviewAvatar reviewAvatarFallback" aria-hidden="true">{review.name.slice(0, 1)}</span>
+                )}
                 <div>
                   <strong>{review.name}</strong>
-                  <span>Posted on Google</span>
+                  <span>{review.date ? `Google · ${review.date}` : 'Google review'}</span>
                 </div>
+                <Quote className="quoteMark" size={21} aria-hidden="true" />
               </div>
-              <div className="reviewStars" aria-label="5 out of 5 stars">
-                {Array.from({ length: 5 }).map((_, index) => (
-                  <Star key={index} size={17} aria-hidden="true" />
+              <div className="reviewStars" aria-label={`${review.rating} out of 5 stars`}>
+                {Array.from({ length: Math.round(review.rating) }).map((_, index) => (
+                  <Star key={index} size={14} aria-hidden="true" />
                 ))}
               </div>
               <p>“{review.text}”</p>
@@ -306,7 +414,7 @@ export default function Home() {
           ))}
         </div>
         <div className="wrap reviewFooter">
-          <span><strong>Google rating score:</strong> 4.4 of 5, based on 7 reviews from the previous Georgian Edge Landscaping profile.</span>
+          <span>{summary.live ? 'Reviews refresh automatically about once an hour.' : 'Currently showing approved imported Google reviews until live Google credentials are added.'}</span>
           <div>
             <a className="contactLink" href={googleReviewUrl} target="_blank" rel="noopener noreferrer">Leave a Google review</a>
             <a className="contactLink" href={facebookReviewsUrl} target="_blank" rel="noopener noreferrer">Facebook recommendations</a>
