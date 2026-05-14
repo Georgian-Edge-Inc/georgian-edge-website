@@ -143,7 +143,7 @@ async function getGoogleReviews(): Promise<{ reviews: ClientReview[]; summary: R
       key: apiKey,
     });
     const response = await fetch(`https://maps.googleapis.com/maps/api/place/details/json?${params.toString()}`, {
-      next: { revalidate: 43200 },
+      next: { revalidate: 3600 },
     });
     const data = await response.json();
 
