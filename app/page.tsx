@@ -365,11 +365,7 @@ export default async function Home() {
             <p className="eyebrow">Client reviews</p>
             <h2 className="serif">Proof from the people who’ve worked with us.</h2>
           </div>
-          <p>
-            {summary.live
-              ? 'Fresh Google reviews update automatically, with profile photos and ratings pulled directly from Google.'
-              : 'A polished review section is ready now. Add the Google Places API key and Place ID in Vercel and new reviews will flow in automatically.'}
-          </p>
+          <p>Real client feedback, compact cards, ratings, and profile photos where available.</p>
         </div>
 
         <div className="wrap reviewSummary">
@@ -384,9 +380,6 @@ export default async function Home() {
               Google rating · {summary.total} reviews
             </span>
           </div>
-          <span className={summary.live ? 'reviewLiveBadge isLive' : 'reviewLiveBadge'}>
-            {summary.live ? 'Live Google sync' : 'Google sync ready'}
-          </span>
         </div>
 
         <div className="reviewRail" aria-label="Scrollable client review cards">
@@ -414,7 +407,7 @@ export default async function Home() {
           ))}
         </div>
         <div className="wrap reviewFooter">
-          <span>{summary.live ? 'Reviews refresh automatically about once an hour.' : 'Currently showing approved imported Google reviews until live Google credentials are added.'}</span>
+          <span>Client reviews from Google and Facebook help property owners see the kind of work Georgian Edge is known for.</span>
           <div>
             <a className="contactLink" href={googleReviewUrl} target="_blank" rel="noopener noreferrer">Leave a Google review</a>
             <a className="contactLink" href={facebookReviewsUrl} target="_blank" rel="noopener noreferrer">Facebook recommendations</a>
