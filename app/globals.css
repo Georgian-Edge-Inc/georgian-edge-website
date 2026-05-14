@@ -80,3 +80,12 @@
 .reviewAvatarFallback{display:grid;place-items:center;background:linear-gradient(135deg,var(--forest),var(--lake));color:white;font-family:var(--subheading-font);font-weight:900;text-transform:uppercase}
 .reviewCardTop{position:relative;padding-right:28px}.quoteMark{margin-left:auto;color:rgba(154,111,69,.34);flex:0 0 auto}.reviewCard p{display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}.reviewFooter{margin-top:4px}
 @media(max-width:860px){.reviewIntro{grid-template-columns:1fr;gap:12px;margin-bottom:16px}.reviewSummary{align-items:flex-start;flex-direction:column;margin-bottom:14px}.reviewRail{grid-auto-columns:minmax(258px,82vw);padding-bottom:20px}.reviewCard{min-height:245px;padding:18px;border-radius:22px}.reviewFooter{align-items:flex-start;flex-direction:column}.reviewFooter div{display:grid;width:100%;gap:10px}.reviewFooter .contactLink{width:100%;text-align:center}}
+
+
+/* Service area SEO page */
+.serviceAreasHero{background:linear-gradient(135deg,rgba(18,40,34,.92),rgba(49,95,104,.68)),url('/photos/stephen-uploaded/georgian-edge-owned-20.jpg');background-position:center}
+.serviceAreaGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:12px 0 76px}
+.serviceAreaCard{background:#fffaf0;border:1px solid rgba(31,61,50,.13);border-radius:28px;padding:28px;box-shadow:0 20px 60px rgba(31,61,50,.07)}
+.serviceAreaCard svg{color:var(--forest)}.serviceAreaCard h2{font-size:1.55rem;margin:16px 0 10px}.serviceAreaCard p{line-height:1.68;color:#425044}.serviceAreaCard ul{display:grid;gap:9px;list-style:none;padding:0;margin:18px 0 0}.serviceAreaCard li{display:flex;gap:9px;align-items:flex-start;font-weight:700;color:#2d3d31}.serviceAreaCard li svg{flex:0 0 auto;margin-top:2px}
+@media(max-width:980px){.serviceAreaGrid{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){.serviceAreaGrid{grid-template-columns:1fr;gap:12px;padding-bottom:48px}.serviceAreaCard{padding:22px;border-radius:22px}}

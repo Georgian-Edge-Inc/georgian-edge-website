@@ -54,6 +54,7 @@ export default function SiteNav({ light = false }: { light?: boolean }) {
       </div>
       <div className="navlinks">
         <Link href="/services">Services</Link>
+        <Link href="/service-areas">Areas</Link>
         <Link href="/about">About</Link>
         <Link href="/gallery">Gallery</Link>
         <Link href="/request-work">Request Work</Link>
