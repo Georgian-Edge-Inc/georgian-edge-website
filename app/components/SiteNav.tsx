@@ -1,8 +1,20 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+const googleBusinessProfileUrl = 'https://g.page/r/CUB04VSzUFVdEAE';
 const facebookUrl = 'https://www.facebook.com/GeorgianEdgeLandscaping/';
 const instagramUrl = 'https://www.instagram.com/georgianedgeinc/';
+
+function GoogleIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12.24 10.29v3.92h5.56c-.24 1.27-.97 2.35-2.07 3.08v2.56h3.35c1.96-1.79 3.09-4.43 3.09-7.55 0-.72-.07-1.41-.2-2.01h-9.73Z" />
+      <path d="M12.24 22c2.8 0 5.15-.91 6.87-2.48l-3.35-2.56c-.93.61-2.12.98-3.52.98-2.7 0-4.98-1.8-5.8-4.22H2.98v2.64A10.38 10.38 0 0 0 12.24 22Z" />
+      <path d="M6.44 13.72a6.1 6.1 0 0 1 0-3.9V7.18H2.98a10.17 10.17 0 0 0 0 9.18l3.46-2.64Z" />
+      <path d="M12.24 5.6c1.52 0 2.88.52 3.96 1.53l2.97-2.93C17.37 2.54 15.03 1.5 12.24 1.5a10.38 10.38 0 0 0-9.26 5.68l3.46 2.64c.82-2.42 3.1-4.22 5.8-4.22Z" />
+    </svg>
+  );
+}
 
 function FacebookIcon() {
   return (
@@ -29,6 +41,9 @@ export default function SiteNav({ light = false }: { light?: boolean }) {
         </Link>
         <div className="navContact">
           <a className="navPhone" href="tel:+17054411215">705-441-1215</a>
+          <a className="socialIcon" href={googleBusinessProfileUrl} target="_blank" rel="noopener noreferrer" aria-label="Georgian Edge Google Business Profile">
+            <GoogleIcon />
+          </a>
           <a className="socialIcon" href={facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Georgian Edge on Facebook">
             <FacebookIcon />
           </a>
