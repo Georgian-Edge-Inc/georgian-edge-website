@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 
 const baseUrl = 'https://georgianedgeinc.ca';
 
-const lastModified = new Date('2026-05-02T00:00:00-04:00');
+const lastModified = new Date('2026-05-14T00:00:00-04:00');
 
 const routes = [
   { path: '/', priority: 1.0, changeFrequency: 'weekly' as const },

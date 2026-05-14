@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { ArrowRight, Camera, Leaf, MapPin, Sprout, Trees } from 'lucide-react';
+import { ArrowRight, Camera, Leaf, MapPin, Sprout, Star, Trees } from 'lucide-react';
 import SiteNav from './components/SiteNav';
 
 export const metadata: Metadata = {
@@ -63,6 +63,8 @@ const services = [
 const phoneDisplay = '705-441-1215';
 const phoneHref = 'tel:+17054411215';
 const facebookUrl = 'https://www.facebook.com/GeorgianEdgeLandscaping/';
+const facebookReviewsUrl = 'https://www.facebook.com/GeorgianEdgeLandscaping/reviews';
+const googleReviewUrl = 'https://g.page/r/CUB04VSzUFVdEAE/review';
 const instagramUrl = 'https://www.instagram.com/georgianedgeinc/';
 
 const homeSchema = {
@@ -113,11 +115,18 @@ const homeSchema = {
           },
         })),
       },
-      potentialAction: {
-        '@type': 'CommunicateAction',
-        name: 'Request Georgian Edge property work',
-        target: 'https://georgianedgeinc.ca/request-work',
-      },
+      potentialAction: [
+        {
+          '@type': 'CommunicateAction',
+          name: 'Request Georgian Edge property work',
+          target: 'https://georgianedgeinc.ca/request-work',
+        },
+        {
+          '@type': 'ReviewAction',
+          name: 'Leave a Google review for Georgian Edge Inc.',
+          target: googleReviewUrl,
+        },
+      ],
     },
     {
       '@type': 'WebSite',
@@ -240,6 +249,29 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="reviews" className="reviews wrap" aria-label="Georgian Edge reviews and recommendations">
+        <div className="reviewIntro">
+          <p className="eyebrow">Reviews & recommendations</p>
+          <h2 className="serif">Local trust matters when someone is caring for your property.</h2>
+          <p>
+            Georgian Edge is now approved on Google. If we have helped with your garden, landscape, cottage, or property
+            care, a quick review helps other Georgian Bay property owners find us with confidence.
+          </p>
+        </div>
+        <div className="reviewCards">
+          <a className="reviewCard" href={googleReviewUrl} target="_blank" rel="noopener noreferrer">
+            <span className="reviewIcon" aria-hidden="true"><Star size={22} /></span>
+            <strong>Leave a Google review</strong>
+            <span>Share your experience on Georgian Edge’s Google Business Profile.</span>
+          </a>
+          <a className="reviewCard" href={facebookReviewsUrl} target="_blank" rel="noopener noreferrer">
+            <span className="reviewIcon" aria-hidden="true"><Sprout size={22} /></span>
+            <strong>View Facebook recommendations</strong>
+            <span>See or leave recommendations through the Georgian Edge Facebook page.</span>
+          </a>
+        </div>
+      </section>
+
       <section id="work" className="work">
         <div className="wrap workHead">
           <p className="eyebrow">Recent refresh</p>
@@ -262,6 +294,8 @@ export default function Home() {
         <div className="contactActions">
           <Link className="btn primary" href="/request-work">Request work</Link>
           <a className="contactLink" href={phoneHref}>{phoneDisplay}</a>
+          <a className="contactLink" href={googleReviewUrl} target="_blank" rel="noopener noreferrer">Google review</a>
+          <a className="contactLink" href={facebookReviewsUrl} target="_blank" rel="noopener noreferrer">Facebook reviews</a>
           <a className="contactLink" href={facebookUrl} target="_blank" rel="noopener noreferrer">Facebook</a>
           <a className="contactLink" href={instagramUrl} target="_blank" rel="noopener noreferrer">Instagram</a>
         </div>
