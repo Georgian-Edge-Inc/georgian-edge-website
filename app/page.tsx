@@ -67,6 +67,34 @@ const facebookReviewsUrl = 'https://www.facebook.com/GeorgianEdgeLandscaping/rev
 const googleReviewUrl = 'https://g.page/r/CUB04VSzUFVdEAE/review';
 const instagramUrl = 'https://www.instagram.com/georgianedgeinc/';
 
+const clientReviews = [
+  {
+    name: 'Mike Ryan',
+    date: '2023-02-03',
+    text: 'The attention to detail that Kassidy and Stephen show is remarkable! They seemingly read your mind to provide results beyond your wildest dreams…I wholeheartedly recommend this team!',
+  },
+  {
+    name: 'Jamilyn Johnston',
+    date: '2022-09-05',
+    text: "I can't say enough great things about this company! They completely redid our gardens in time for our upcoming wedding and made them look gorgeous. One of the most professional, fun, and talented group of landscapers around, I highly recommend!",
+  },
+  {
+    name: 'Chris Brittain',
+    date: '2021-04-26',
+    text: 'I highly recommend Georgian Edge for all landscaping needs. They have been doing a great job with our lawn care services, and we look forward to using them for landscaping projects throughout this year. Stephen is responsive and on time, making it easy to work with him.',
+  },
+  {
+    name: 'Heather McFarlane',
+    date: '2021-04-19',
+    text: 'Amazing job!!! Stephen did a great job with my yard clean up. Super friendly, experienced and very responsive. Looking forward to booking any future landscaping needs with him!',
+  },
+  {
+    name: 'Kyle Spencley',
+    date: '2021-04-14',
+    text: 'Amazing job with our gardens. Very experienced and lots of attention to detail. Went above and beyond! Will be booking this service every year.',
+  },
+];
+
 const homeSchema = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -249,26 +277,40 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="reviews" className="reviews wrap" aria-label="Georgian Edge reviews and recommendations">
-        <div className="reviewIntro">
-          <p className="eyebrow">Reviews & recommendations</p>
-          <h2 className="serif">Local trust matters when someone is caring for your property.</h2>
+      <section id="reviews" className="reviews" aria-label="Georgian Edge client reviews">
+        <div className="wrap reviewIntro">
+          <p className="eyebrow">From our clients</p>
+          <h2 className="serif">Real words from Georgian Edge clients.</h2>
           <p>
-            Georgian Edge is now approved on Google. If we have helped with your garden, landscape, cottage, or property
-            care, a quick review helps other Georgian Bay property owners find us with confidence.
+            A scrolling set of Google reviews carried over from the Georgian Edge Landscaping site, with quick links to
+            view or leave fresh recommendations on Google and Facebook.
           </p>
         </div>
-        <div className="reviewCards">
-          <a className="reviewCard" href={googleReviewUrl} target="_blank" rel="noopener noreferrer">
-            <span className="reviewIcon" aria-hidden="true"><Star size={22} /></span>
-            <strong>Leave a Google review</strong>
-            <span>Share your experience on Georgian Edge’s Google Business Profile.</span>
-          </a>
-          <a className="reviewCard" href={facebookReviewsUrl} target="_blank" rel="noopener noreferrer">
-            <span className="reviewIcon" aria-hidden="true"><Sprout size={22} /></span>
-            <strong>View Facebook recommendations</strong>
-            <span>See or leave recommendations through the Georgian Edge Facebook page.</span>
-          </a>
+        <div className="reviewRail" aria-label="Scrollable client review cards">
+          {clientReviews.map((review) => (
+            <article className="reviewCard" key={review.name}>
+              <div className="reviewCardTop">
+                <span className="reviewIcon" aria-hidden="true"><Star size={21} /></span>
+                <div>
+                  <strong>{review.name}</strong>
+                  <span>Posted on Google</span>
+                </div>
+              </div>
+              <div className="reviewStars" aria-label="5 out of 5 stars">
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <Star key={index} size={17} aria-hidden="true" />
+                ))}
+              </div>
+              <p>“{review.text}”</p>
+            </article>
+          ))}
+        </div>
+        <div className="wrap reviewFooter">
+          <span><strong>Google rating score:</strong> 4.4 of 5, based on 7 reviews from the previous Georgian Edge Landscaping profile.</span>
+          <div>
+            <a className="contactLink" href={googleReviewUrl} target="_blank" rel="noopener noreferrer">Leave a Google review</a>
+            <a className="contactLink" href={facebookReviewsUrl} target="_blank" rel="noopener noreferrer">Facebook recommendations</a>
+          </div>
         </div>
       </section>
 
