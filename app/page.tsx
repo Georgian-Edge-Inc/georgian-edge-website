@@ -87,6 +87,13 @@ type ReviewSummary = {
 
 const fallbackReviews: ClientReview[] = [
   {
+    name: 'Gordon Canning',
+    date: 'a year ago',
+    text: 'Stephen and Kassidy are a young couple who are highly motivated to make their company, Georgian Edge Landscaping, a success.',
+    rating: 5,
+    source: 'Google',
+  },
+  {
     name: 'Mike Ryan',
     date: '2023-02-03',
     text: 'The attention to detail that Kassidy and Stephen show is remarkable! They seemingly read your mind to provide results beyond your wildest dreams…I wholeheartedly recommend this team!',
@@ -133,7 +140,7 @@ async function getGoogleReviews(): Promise<{ reviews: ClientReview[]; summary: R
   const placeId = process.env.GOOGLE_PLACE_ID;
 
   if (!apiKey || !placeId) {
-    return { reviews: fallbackReviews, summary: { rating: 4.4, total: 7, live: false } };
+    return { reviews: fallbackReviews, summary: { rating: 4.5, total: 8, live: false } };
   }
 
   try {
@@ -149,7 +156,7 @@ async function getGoogleReviews(): Promise<{ reviews: ClientReview[]; summary: R
     const data = await response.json();
 
     if (!response.ok || data.status !== 'OK' || !data.result) {
-      return { reviews: fallbackReviews, summary: { rating: 4.4, total: 7, live: false } };
+      return { reviews: fallbackReviews, summary: { rating: 4.5, total: 8, live: false } };
     }
 
     const liveReviews = (data.result.reviews || [])
@@ -172,7 +179,7 @@ async function getGoogleReviews(): Promise<{ reviews: ClientReview[]; summary: R
       },
     };
   } catch {
-    return { reviews: fallbackReviews, summary: { rating: 4.4, total: 7, live: false } };
+    return { reviews: fallbackReviews, summary: { rating: 4.5, total: 8, live: false } };
   }
 }
 
