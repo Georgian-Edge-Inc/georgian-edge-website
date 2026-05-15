@@ -64,6 +64,7 @@ const phoneDisplay = '705-441-1215';
 const phoneHref = 'tel:+17054411215';
 const facebookUrl = 'https://www.facebook.com/GeorgianEdgeLandscaping/';
 const facebookReviewsUrl = 'https://www.facebook.com/GeorgianEdgeLandscaping/reviews';
+const googleBusinessProfileUrl = 'https://g.page/r/CUB04VSzUFVdEAE';
 const googleReviewUrl = 'https://g.page/r/CUB04VSzUFVdEAE/review';
 const instagramUrl = 'https://www.instagram.com/georgianedgeinc/';
 
@@ -190,7 +191,7 @@ const homeSchema = {
       logo: 'https://georgianedgeinc.ca/brand/georgian-edge-primary-black.png',
       email: 'georgianedgeinc@gmail.com',
       telephone: '+1-705-441-1215',
-      sameAs: [facebookUrl, instagramUrl],
+      sameAs: [facebookUrl, instagramUrl, googleBusinessProfileUrl],
       contactPoint: {
         '@type': 'ContactPoint',
         contactType: 'customer service and work requests',

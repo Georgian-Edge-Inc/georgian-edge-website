@@ -65,6 +65,29 @@ const services = [
   },
 ];
 
+const serviceFaqs = [
+  {
+    question: 'What kind of properties does Georgian Edge work on?',
+    answer:
+      'Georgian Edge works with Georgian Bay homes, cottages, country properties, garden spaces, waterfront edges, and outdoor areas that need detailed cleanup, landscape refreshes, planting, pruning, inspections, or seasonal support.',
+  },
+  {
+    question: 'Do you do basic lawn mowing?',
+    answer:
+      'Basic lawn mowing is not the main focus. Georgian Edge is better suited for garden cleanups, property care, landscape refreshes, planting, pruning, cottage support, property management, and higher-detail outdoor work.',
+  },
+  {
+    question: 'Can you help if I am not at the property full time?',
+    answer:
+      'Yes. Cottage and country property owners can request inspections, seasonal opening or closing support, outdoor care coordination, progress photos, and help prioritizing what needs attention first.',
+  },
+  {
+    question: 'Which areas do you serve?',
+    answer:
+      'Georgian Edge serves Georgian Bay-area properties, including Collingwood, The Blue Mountains, Thornbury, Meaford, Clearview, and surrounding cottage and country property areas.',
+  },
+];
+
 const serviceAreas = [
   { '@type': 'AdministrativeArea', name: 'Georgian Bay, Ontario' },
   { '@type': 'City', name: 'Collingwood' },
@@ -103,6 +126,18 @@ const servicesSchema = {
           provider: { '@id': 'https://georgianedgeinc.ca/#business' },
           areaServed: serviceAreas,
           serviceType: service.title,
+        },
+      })),
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': 'https://georgianedgeinc.ca/services#faq',
+      mainEntity: serviceFaqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
         },
       })),
     },
@@ -150,6 +185,21 @@ export default function ServicesPage() {
             </ul>
           </article>
         ))}
+      </section>
+
+      <section className="serviceFaq wrap" aria-label="Georgian Edge service questions">
+        <div className="serviceFaqIntro">
+          <p className="eyebrow">Common questions</p>
+          <h2 className="serif">Clear answers for Georgian Bay property owners.</h2>
+        </div>
+        <div className="serviceFaqList">
+          {serviceFaqs.map((faq) => (
+            <article className="serviceFaqItem" key={faq.question}>
+              <h3>{faq.question}</h3>
+              <p>{faq.answer}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="splitFeature wrap">

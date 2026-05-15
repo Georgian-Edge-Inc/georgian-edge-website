@@ -89,3 +89,8 @@
 .serviceAreaCard svg{color:var(--forest)}.serviceAreaCard h2{font-size:1.55rem;margin:16px 0 10px}.serviceAreaCard p{line-height:1.68;color:#425044}.serviceAreaCard ul{display:grid;gap:9px;list-style:none;padding:0;margin:18px 0 0}.serviceAreaCard li{display:flex;gap:9px;align-items:flex-start;font-weight:700;color:#2d3d31}.serviceAreaCard li svg{flex:0 0 auto;margin-top:2px}
 @media(max-width:980px){.serviceAreaGrid{grid-template-columns:1fr 1fr}}
 @media(max-width:680px){.serviceAreaGrid{grid-template-columns:1fr;gap:12px;padding-bottom:48px}.serviceAreaCard{padding:22px;border-radius:22px}}
+
+
+/* Service FAQ SEO section */
+.serviceFaq{display:grid;grid-template-columns:.82fr 1.18fr;gap:30px;align-items:start;padding:24px 0 72px}.serviceFaqIntro{position:sticky;top:24px}.serviceFaqIntro h2{font-size:clamp(2.15rem,4.6vw,4.2rem);line-height:.98;letter-spacing:-.04em;margin:8px 0 0}.serviceFaqList{display:grid;gap:14px}.serviceFaqItem{background:#fffaf0;border:1px solid rgba(31,61,50,.13);border-radius:24px;padding:24px;box-shadow:0 16px 48px rgba(31,61,50,.06)}.serviceFaqItem h3{font-family:var(--subheading-font);font-size:1.05rem;margin:0 0 8px;color:var(--forest);letter-spacing:.01em}.serviceFaqItem p{margin:0;color:#3f4e43;line-height:1.72;font-size:1rem}
+@media(max-width:760px){.serviceFaq{grid-template-columns:1fr;gap:18px;padding:10px 0 48px}.serviceFaqIntro{position:static}.serviceFaqItem{padding:20px;border-radius:20px}.serviceFaqIntro h2{font-size:clamp(2rem,11vw,3rem)}}
