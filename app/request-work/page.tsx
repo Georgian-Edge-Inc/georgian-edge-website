@@ -4,9 +4,9 @@ import { ArrowRight, ClipboardList, ShieldCheck } from 'lucide-react';
 import SiteNav from '../components/SiteNav';
 
 export const metadata: Metadata = {
-  title: 'Request Work | Georgian Edge Inc.',
+  title: 'Request Property Care Work',
   description:
-    'Request a Georgian Edge Inc. quote for garden cleanups, landscape refreshes, planting, pruning, property management, cottage support, aerial property photography, and outdoor property care.',
+    'Request a Georgian Edge Inc. quote in Collingwood, Thornbury, Meaford, The Blue Mountains & Georgian Bay for garden cleanups, landscape refreshes, planting, pruning, property management, cottage support, aerial property photography, and outdoor property care.',
   alternates: { canonical: '/request-work' },
   openGraph: {
     title: 'Request Work | Georgian Edge Inc.',
