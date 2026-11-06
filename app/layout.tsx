@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: '%s | Georgian Edge Inc.',
   },
   description:
-    'Georgian Edge Inc. provides premium property care, garden cleanups, landscape refreshes, planting, pruning, cottage support, property management, and aerial property photography around Georgian Bay.',
+    'Georgian Edge Inc. provides premium property care, garden cleanups, landscape builds and refreshes, planting, pruning, property management, and aerial property photography in Collingwood, Thornbury, Meaford, The Blue Mountains, and across Georgian Bay, Ontario.',
   keywords: [
     'Georgian Edge Inc',
     'Georgian Bay landscaping',
@@ -49,13 +49,13 @@ export const metadata: Metadata = {
     siteName: 'Georgian Edge Inc.',
     title: 'Georgian Edge Inc. | Georgian Bay Property Care & Landscaping',
     description:
-      'Premium property care, garden cleanups, landscape refreshes, planting, pruning, cottage support, property management, and aerial property photography around Georgian Bay.',
+      'Premium property care, garden cleanups, landscape builds and refreshes, planting, pruning, property management, and aerial property photography in Collingwood, Thornbury, Meaford, The Blue Mountains, and across Georgian Bay, Ontario.',
     images: [
       {
-        url: '/brand/georgian-edge-primary-black.png',
-        width: 576,
-        height: 576,
-        alt: 'Georgian Edge Inc. logo',
+        url: '/photos/stephen-uploaded/georgian-edge-owned-20.jpg',
+        width: 1280,
+        height: 959,
+        alt: 'Landscaped Georgian Bay property with gardens and lawn cared for by Georgian Edge Inc.',
       },
     ],
   },
@@ -63,8 +63,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Georgian Edge Inc. | Georgian Bay Property Care & Landscaping',
     description:
-      'Premium property care, garden cleanups, landscape refreshes, planting, pruning, cottage support, property management, and aerial property photography around Georgian Bay.',
-    images: ['/brand/georgian-edge-primary-black.png'],
+      'Premium property care, garden cleanups, landscape builds and refreshes, planting, pruning, property management, and aerial property photography in Collingwood, Thornbury, Meaford, The Blue Mountains, and across Georgian Bay, Ontario.',
+    images: ['/photos/stephen-uploaded/georgian-edge-owned-20.jpg'],
   },
   robots: {
     index: true,
@@ -94,6 +94,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en-CA">
       <body>
         {children}
+        <div className="mobileContactBar">
+          <a className="mobileCall" href="tel:+17054411215">Call 705-441-1215</a>
+          <a className="mobileRequest" href="/request-work">Request work</a>
+        </div>
         <Analytics />
         <SpeedInsights />
       </body>
