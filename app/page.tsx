@@ -7,13 +7,13 @@ import SiteNav from './components/SiteNav';
 export const metadata: Metadata = {
   title: 'Georgian Edge Inc. | Georgian Bay Property Care & Landscaping',
   description:
-    'Premium Georgian Bay property care, garden cleanups, landscape refreshes, planting, pruning, cottage support, property management, and aerial property photography.',
+    'Premium property care and landscaping in Collingwood, Thornbury, Meaford, The Blue Mountains & Georgian Bay — garden cleanups, landscape builds and refreshes, planting, pruning, property management, and aerial property photography.',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Georgian Edge Inc. | Georgian Bay Property Care & Landscaping',
     url: '/',
     description:
-      'Premium property care, garden cleanups, landscape refreshes, planting, pruning, cottage support, property management, and aerial photography around Georgian Bay.',
+      'Premium property care, garden cleanups, landscape builds and refreshes, planting, pruning, property management, and aerial photography in Collingwood, Thornbury, Meaford, The Blue Mountains, and across Georgian Bay.',
     images: [
       {
         url: '/photos/stephen-uploaded/georgian-edge-owned-03.jpg',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Georgian Edge Inc. | Georgian Bay Property Care & Landscaping',
     description:
-      'Premium Georgian Bay property care, landscape refreshes, garden cleanups, cottage support, and aerial property photography.',
+      'Premium property care, garden cleanups, landscape refreshes, property management, cottage support, and aerial photography in Collingwood, Thornbury, Meaford, The Blue Mountains & Georgian Bay.',
     images: ['/photos/stephen-uploaded/georgian-edge-owned-03.jpg'],
   },
 };
@@ -51,7 +51,7 @@ const services = [
   {
     icon: MapPin,
     title: 'Property management',
-    text: 'Reliable cottage and country property support: inspections, seasonal opening/closing help, outdoor care coordination, and details handled without chasing everything yourself.',
+    text: 'Reliable cottage and country property support: inspections, winter check-ins, seasonal opening/closing help, outdoor care coordination, and details handled without chasing everything yourself.',
   },
   {
     icon: Camera,
@@ -299,6 +299,14 @@ export default async function Home() {
           </video>
         </div>
         <SiteNav />
+        <div className="wrap">
+          <p className="seasonBanner">
+            <strong>Right now</strong>
+            <span>Fall cleanups are wrapping up for the season — and winter property check-ins are open for homes and cottages sitting empty. We stop in regularly, walk the property, and let you know right away if anything looks off.</span>
+            <Link href="/request-work">Book a winter check-in</Link>
+            <a href={phoneHref}>Call {phoneDisplay}</a>
+          </p>
+        </div>
         <div className="heroInner wrap">
           <div className="heroCopy">
             <p className="eyebrow">Georgian Edge Inc.</p>
@@ -340,6 +348,7 @@ export default async function Home() {
       </section>
 
       <section id="services" className="services wrap" aria-label="Georgian Edge services">
+        <h2 className="visuallyHidden">Georgian Bay property care services</h2>
         {services.map(({ icon: Icon, title, text }) => (
           <article className="service" key={title}>
             <Icon size={25} aria-hidden="true" />
@@ -441,7 +450,7 @@ export default async function Home() {
       <section id="contact" className="cta wrap">
         <Image src="/brand/georgian-edge-brandmark-black.png" alt="" width={86} height={86} />
         <h2 className="serif">Ready to clean up, refresh, inspect, or manage your property?</h2>
-        <p>Tell us what your property needs and we’ll help shape the next step.</p>
+        <p>Tell us what your property needs and we’ll help shape the next step. Fall cleanups are in their final weeks, and winter property check-ins are now open for homes and cottages sitting empty this season.</p>
         <div className="contactActions">
           <Link className="btn primary" href="/request-work">Request work</Link>
           <a className="contactLink" href={phoneHref}>{phoneDisplay}</a>
