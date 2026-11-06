@@ -5,9 +5,9 @@ import SiteNav from '../components/SiteNav';
 import PageHeroVideo from '../components/PageHeroVideo';
 
 export const metadata: Metadata = {
-  title: 'Services | Property Care, Landscape Refreshes & Cottage Support',
+  title: 'Landscaping Services in Collingwood & Georgian Bay',
   description:
-    'Explore Georgian Edge Inc. services around Georgian Bay: garden cleanups, mulch installation, landscape builds and refreshes, planting, pruning, property management, cottage support, and aerial property photography.',
+    'Georgian Edge Inc. services in Collingwood, Thornbury, Meaford, The Blue Mountains & Georgian Bay: garden cleanups, mulch installation, landscape builds and refreshes, planting, pruning, property management, cottage support, and aerial property photography.',
   alternates: { canonical: '/services' },
   openGraph: {
     title: 'Services | Georgian Edge Inc.',
@@ -55,7 +55,7 @@ const services = [
     icon: MapPin,
     title: 'Property management',
     text: 'Reliable cottage and country property support for owners who need inspections, seasonal opening/closing help, outdoor care coordination, and details handled without chasing everything themselves.',
-    bullets: ['Property inspections and check-ins', 'Seasonal opening and closing support', 'Outdoor care coordination'],
+    bullets: ['Property inspections and check-ins', 'Winter check-ins for homes and cottages sitting empty', 'Seasonal opening and closing support', 'Outdoor care coordination'],
   },
   {
     icon: Camera,
@@ -80,6 +80,11 @@ const serviceFaqs = [
     question: 'Can you help if I am not at the property full time?',
     answer:
       'Yes. Cottage and country property owners can request inspections, seasonal opening or closing support, outdoor care coordination, progress photos, and help prioritizing what needs attention first.',
+  },
+  {
+    question: 'Do you offer winter property check-ins for empty homes and cottages?',
+    answer:
+      'Yes. If your home or cottage sits empty over the winter, Georgian Edge can stop in regularly, walk the property, and let you know right away if anything looks off — a local set of eyes on the place while you are away.',
   },
   {
     question: 'Which areas do you serve?',
