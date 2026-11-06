@@ -93,6 +93,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-CA">
       <body>
+        <div className="announceBar">
+          <div className="wrap announceBarInner">
+            <p className="announceBarText">Fall cleanups are wrapping up — winter property check-ins are now open for empty homes &amp; cottages</p>
+            <div className="announceBarActions">
+              <a className="announceBarBtn" href="/request-work">Book a winter check-in</a>
+              <a className="announceBarCall" href="tel:7054411215">Call 705-441-1215</a>
+            </div>
+          </div>
+        </div>
         {children}
         <div className="mobileContactBar">
           <a className="mobileCall" href="tel:+17054411215">Call 705-441-1215</a>

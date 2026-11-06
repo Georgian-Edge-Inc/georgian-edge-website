@@ -299,14 +299,6 @@ export default async function Home() {
           </video>
         </div>
         <SiteNav />
-        <div className="wrap">
-          <p className="seasonBanner">
-            <strong>Right now</strong>
-            <span>Fall cleanups are wrapping up for the season — and winter property check-ins are open for homes and cottages sitting empty. We stop in regularly, walk the property, and let you know right away if anything looks off.</span>
-            <Link href="/request-work">Book a winter check-in</Link>
-            <a href={phoneHref}>Call {phoneDisplay}</a>
-          </p>
-        </div>
         <div className="heroInner wrap">
           <div className="heroCopy">
             <p className="eyebrow">Georgian Edge Inc.</p>
