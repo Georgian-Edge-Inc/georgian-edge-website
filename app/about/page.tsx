@@ -4,7 +4,7 @@ import SiteNav from '../components/SiteNav';
 import PageHeroVideo from '../components/PageHeroVideo';
 
 export const metadata: Metadata = {
-  title: 'About Georgian Edge Inc. | Georgian Bay Property Care Team',
+  title: 'About Us — Georgian Bay Property Care Team',
   description:
     'Meet Georgian Edge Inc., a locally grown property care and landscaping team serving Collingwood, The Blue Mountains, Thornbury, Meaford, and the Georgian Bay area since 2021.',
   alternates: { canonical: '/about' },
