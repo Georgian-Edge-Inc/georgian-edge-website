@@ -4,12 +4,12 @@ import { ArrowRight, ClipboardList, ShieldCheck } from 'lucide-react';
 import SiteNav from '../components/SiteNav';
 
 export const metadata: Metadata = {
-  title: 'Request Property Care Work',
+  title: { absolute: 'Request a Quote | Landscaping & Property Care, Georgian Bay' },
   description:
-    'Request a Georgian Edge Inc. quote in Collingwood, Thornbury, Meaford, The Blue Mountains & Georgian Bay for garden cleanups, landscape refreshes, planting, pruning, property management, cottage support, aerial property photography, and outdoor property care.',
+    'Request a Georgian Edge quote for cleanups, landscape refreshes, planting, pruning, property management or winter check-ins around Georgian Bay.',
   alternates: { canonical: '/request-work' },
   openGraph: {
-    title: 'Request Work | Georgian Edge Inc.',
+    title: 'Request a Quote | Landscaping & Property Care, Georgian Bay',
     url: '/request-work',
     description:
       'Share your property details, timing, photos, and the outdoor work or property management support you want quoted.',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Request Work | Georgian Edge Inc.',
+    title: 'Request a Quote | Landscaping & Property Care, Georgian Bay',
     description:
       'Share your property details, timing, photos, and the outdoor work or property management support you want quoted.',
     images: ['/photos/stephen-uploaded/georgian-edge-owned-06.jpg'],
@@ -79,7 +79,7 @@ export default function RequestWorkPage() {
         <SiteNav />
         <div className="wrap pageHeroInner">
           <p className="eyebrow">Request work</p>
-          <h1 className="serif">Tell us what your property needs.</h1>
+          <h1 className="serif">Request a quote for property care or landscaping.</h1>
           <p className="lead">Use the Georgian Edge request form to share your property details, photos, timing, and the outdoor work or property management support you want quoted.</p>
         </div>
       </section>
