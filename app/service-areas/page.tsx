@@ -6,12 +6,12 @@ import SiteNav from '../components/SiteNav';
 import PageHeroVideo from '../components/PageHeroVideo';
 
 export const metadata: Metadata = {
-  title: 'Service Areas | Georgian Bay Property Care & Landscaping',
+  title: { absolute: 'Service Areas — Meaford, Collingwood & Georgian Bay' },
   description:
-    'Georgian Edge Inc. serves Georgian Bay properties in Collingwood, The Blue Mountains, Thornbury, Meaford, Clearview, and surrounding cottage and country home areas.',
+    'Property care & landscaping in Meaford, Collingwood, The Blue Mountains, Thornbury, Clearview & surrounding Georgian Bay cottage and country home areas.',
   alternates: { canonical: '/service-areas' },
   openGraph: {
-    title: 'Service Areas | Georgian Edge Inc.',
+    title: 'Service Areas — Meaford, Collingwood & Georgian Bay',
     url: '/service-areas',
     description:
       'Premium property care, garden cleanups, landscape refreshes, property management, and cottage support around Georgian Bay, Collingwood, The Blue Mountains, Thornbury, Meaford, and Clearview.',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Service Areas | Georgian Edge Inc.',
+    title: 'Service Areas — Meaford, Collingwood & Georgian Bay',
     description:
       'Georgian Bay property care, landscape refreshes, cottage support, and garden cleanups in Collingwood, The Blue Mountains, Thornbury, Meaford, Clearview, and nearby areas.',
     images: ['/photos/stephen-uploaded/georgian-edge-owned-20.jpg'],
@@ -51,8 +51,8 @@ const areas = [
   },
   {
     name: 'Meaford',
-    text: 'Landscape refreshes, garden cleanups, property inspections, and practical outdoor support for Meaford homes, cottages, and larger properties.',
-    terms: ['Meaford landscaping', 'Meaford garden maintenance', 'Meaford property support'],
+    text: 'Landscape refreshes, garden cleanups, lawn care, property inspections, and practical outdoor support for Meaford homes, cottages, and larger properties.',
+    terms: ['Meaford landscaping', 'Meaford lawn care', 'Meaford garden maintenance', 'Meaford property support'],
   },
   {
     name: 'Clearview',
@@ -123,7 +123,7 @@ export default function ServiceAreasPage() {
         <SiteNav />
         <div className="wrap pageHeroInner">
           <p className="eyebrow">Service areas</p>
-          <h1 className="serif">Georgian Bay property care for homes, cottages, and country properties.</h1>
+          <h1 className="serif">Property care &amp; landscaping in Meaford, Collingwood, Thornbury &amp; The Blue Mountains.</h1>
           <p className="lead">Georgian Edge serves Collingwood, The Blue Mountains, Thornbury, Meaford, Clearview, and surrounding Georgian Bay properties with polished outdoor care and seasonal support.</p>
         </div>
       </section>
