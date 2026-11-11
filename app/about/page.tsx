@@ -4,12 +4,12 @@ import SiteNav from '../components/SiteNav';
 import PageHeroVideo from '../components/PageHeroVideo';
 
 export const metadata: Metadata = {
-  title: 'About Us — Georgian Bay Property Care Team',
+  title: { absolute: 'About Us | Meaford Landscaping & Property Care Team' },
   description:
-    'Meet Georgian Edge Inc., a locally grown property care and landscaping team serving Collingwood, The Blue Mountains, Thornbury, Meaford, and the Georgian Bay area since 2021.',
+    'Meet Georgian Edge Inc., a Meaford-based property care & landscaping team serving Collingwood, Thornbury, The Blue Mountains & Georgian Bay since 2021.',
   alternates: { canonical: '/about' },
   openGraph: {
-    title: 'About Georgian Edge Inc.',
+    title: 'About Us | Meaford Landscaping & Property Care Team',
     url: '/about',
     description:
       'Local Georgian Bay property care, landscape refresh, garden cleanup, and cottage support from Stephen, Kassidy, and the Georgian Edge team.',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Georgian Edge Inc.',
+    title: 'About Us | Meaford Landscaping & Property Care Team',
     description:
       'Local Georgian Bay property care, landscape refresh, garden cleanup, and cottage support from Stephen, Kassidy, and the Georgian Edge team.',
     images: ['/photos/existing-site/about-team-new.jpg'],
@@ -74,7 +74,7 @@ export default function AboutPage() {
         <SiteNav />
         <div className="wrap pageHeroInner">
           <p className="eyebrow">Meet the Georgian Edge team</p>
-          <h1 className="serif">High-quality property care and landscapes since 2021.</h1>
+          <h1 className="serif">A Meaford-based property care and landscaping team since 2021.</h1>
           <p className="lead">A locally grown property care company serving Collingwood, Blue Mountain, Thornbury, Meaford, and the surrounding Georgian Bay area.</p>
         </div>
       </section>
