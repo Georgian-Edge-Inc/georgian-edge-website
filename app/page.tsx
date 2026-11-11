@@ -7,13 +7,13 @@ import SiteNav from './components/SiteNav';
 export const metadata: Metadata = {
   title: 'Georgian Edge Inc. | Georgian Bay Property Care & Landscaping',
   description:
-    'Premium property care and landscaping in Collingwood, Thornbury, Meaford, The Blue Mountains & Georgian Bay — garden cleanups, landscape builds and refreshes, planting, pruning, property management, and aerial property photography.',
+    'Property care & landscaping based in Meaford, serving Collingwood, Thornbury & The Blue Mountains — cleanups, landscape refreshes, planting, pruning & winter check-ins.',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Georgian Edge Inc. | Georgian Bay Property Care & Landscaping',
     url: '/',
     description:
-      'Premium property care, garden cleanups, landscape builds and refreshes, planting, pruning, property management, and aerial photography in Collingwood, Thornbury, Meaford, The Blue Mountains, and across Georgian Bay.',
+      'Property care & landscaping based in Meaford, serving Collingwood, Thornbury & The Blue Mountains — cleanups, landscape refreshes, planting, pruning & winter check-ins.',
     images: [
       {
         url: '/photos/stephen-uploaded/georgian-edge-owned-03.jpg',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Georgian Edge Inc. | Georgian Bay Property Care & Landscaping',
     description:
-      'Premium property care, garden cleanups, landscape refreshes, property management, cottage support, and aerial photography in Collingwood, Thornbury, Meaford, The Blue Mountains & Georgian Bay.',
+      'Property care, garden cleanups, landscape refreshes, property management, cottage support & aerial photography in Meaford, Collingwood & Georgian Bay.',
     images: ['/photos/stephen-uploaded/georgian-edge-owned-03.jpg'],
   },
 };
@@ -187,7 +187,7 @@ const homeSchema = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': ['LocalBusiness', 'HomeAndConstructionBusiness'],
+      '@type': ['LandscapingBusiness', 'LocalBusiness', 'HomeAndConstructionBusiness'],
       '@id': 'https://georgianedgeinc.ca/#business',
       name: 'Georgian Edge Inc.',
       legalName: 'Georgian Edge Inc.',
@@ -302,7 +302,7 @@ export default async function Home() {
         <div className="heroInner wrap">
           <div className="heroCopy">
             <p className="eyebrow">Georgian Edge Inc.</p>
-            <h1 className="serif">Premium property care and management for Georgian Bay homes and cottages.</h1>
+            <h1 className="serif">Premium property care, landscaping, and management for Georgian Bay homes and cottages.</h1>
             <p className="lead">
               Garden cleanups, design-forward landscape builds and refreshes, planting, pruning, property management,
               aerial property photography, and owner support with a clean, established Georgian Bay feel.

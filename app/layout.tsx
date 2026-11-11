@@ -12,16 +12,22 @@ export const metadata: Metadata = {
     template: '%s | Georgian Edge Inc.',
   },
   description:
-    'Georgian Edge Inc. provides premium property care, garden cleanups, landscape builds and refreshes, planting, pruning, property management, and aerial property photography in Collingwood, Thornbury, Meaford, The Blue Mountains, and across Georgian Bay, Ontario.',
+    'Property care, garden cleanups, landscape refreshes, planting, pruning, property management & aerial photography in Meaford, Collingwood & Georgian Bay.',
   keywords: [
     'Georgian Edge Inc',
     'Georgian Bay landscaping',
+    'landscaper Meaford Ontario',
+    'landscaping Meaford',
     'Collingwood landscaping',
+    'lawn care Meaford',
     'Blue Mountain property care',
     'garden cleanups',
+    'fall cleanup Collingwood',
     'mulch installation',
     'landscape refreshes',
     'cottage property management',
+    'property management Meaford',
+    'winter property check-ins Georgian Bay',
     'aerial property photography',
   ],
   applicationName: 'Georgian Edge Inc.',
@@ -49,7 +55,7 @@ export const metadata: Metadata = {
     siteName: 'Georgian Edge Inc.',
     title: 'Georgian Edge Inc. | Georgian Bay Property Care & Landscaping',
     description:
-      'Premium property care, garden cleanups, landscape builds and refreshes, planting, pruning, property management, and aerial property photography in Collingwood, Thornbury, Meaford, The Blue Mountains, and across Georgian Bay, Ontario.',
+      'Property care, garden cleanups, landscape refreshes, planting, pruning, property management & aerial photography in Meaford, Collingwood & Georgian Bay.',
     images: [
       {
         url: '/photos/stephen-uploaded/georgian-edge-owned-20.jpg',
@@ -63,7 +69,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Georgian Edge Inc. | Georgian Bay Property Care & Landscaping',
     description:
-      'Premium property care, garden cleanups, landscape builds and refreshes, planting, pruning, property management, and aerial property photography in Collingwood, Thornbury, Meaford, The Blue Mountains, and across Georgian Bay, Ontario.',
+      'Property care, garden cleanups, landscape refreshes, planting, pruning, property management & aerial photography in Meaford, Collingwood & Georgian Bay.',
     images: ['/photos/stephen-uploaded/georgian-edge-owned-20.jpg'],
   },
   robots: {
@@ -89,10 +95,94 @@ export const metadata: Metadata = {
   },
 };
 
+const siteSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': ['LandscapingBusiness', 'HomeAndConstructionBusiness'],
+      '@id': 'https://georgianedgeinc.ca/#business',
+      name: 'Georgian Edge Inc.',
+      legalName: 'Georgian Edge Inc.',
+      alternateName: 'Georgian Edge',
+      foundingDate: '2021',
+      url: 'https://georgianedgeinc.ca/',
+      image: 'https://georgianedgeinc.ca/brand/georgian-edge-primary-black.png',
+      logo: 'https://georgianedgeinc.ca/brand/georgian-edge-primary-black.png',
+      email: 'georgianedgeinc@gmail.com',
+      telephone: '+1-705-441-1215',
+      description:
+        'Property care, garden cleanups, landscape builds and refreshes, planting, pruning, lawn care, property management, winter property check-ins, and aerial property photography around Georgian Bay, Ontario.',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Meaford',
+        addressRegion: 'ON',
+        addressCountry: 'CA',
+      },
+      areaServed: [
+        { '@type': 'City', name: 'Meaford' },
+        { '@type': 'City', name: 'Thornbury' },
+        { '@type': 'City', name: 'The Blue Mountains' },
+        { '@type': 'City', name: 'Collingwood' },
+        { '@type': 'AdministrativeArea', name: 'Clearview' },
+        { '@type': 'AdministrativeArea', name: 'Georgian Bay, Ontario' },
+      ],
+      sameAs: [
+        'https://www.facebook.com/GeorgianEdgeLandscaping/',
+        'https://www.instagram.com/georgianedgeinc/',
+        'https://g.page/r/CUB04VSzUFVdEAE',
+      ],
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'customer service and work requests',
+        email: 'georgianedgeinc@gmail.com',
+        telephone: '+1-705-441-1215',
+        areaServed: 'CA-ON',
+        availableLanguage: ['en-CA'],
+        url: 'https://georgianedgeinc.ca/request-work',
+      },
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Georgian Bay property care services',
+        itemListElement: [
+          'Garden cleanups',
+          'Fall cleanups',
+          'Landscape builds & refreshes',
+          'Planting & pruning',
+          'Lawn care',
+          'Property management',
+          'Seasonal opening & closing',
+          'Winter property check-ins',
+          'Aerial property photography',
+        ].map((serviceName) => ({
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: serviceName,
+            areaServed: 'Georgian Bay, Ontario',
+            provider: { '@id': 'https://georgianedgeinc.ca/#business' },
+          },
+        })),
+      },
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://georgianedgeinc.ca/#website',
+      url: 'https://georgianedgeinc.ca/',
+      name: 'Georgian Edge Inc.',
+      inLanguage: 'en-CA',
+      publisher: { '@id': 'https://georgianedgeinc.ca/#business' },
+    },
+  ],
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-CA">
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }}
+        />
         <div className="announceBar">
           <div className="wrap announceBarInner">
             <p className="announceBarText">Fall cleanups are wrapping up — winter property check-ins are now open for empty homes &amp; cottages</p>
