@@ -5,15 +5,15 @@ import SiteNav from '../components/SiteNav';
 import PageHeroVideo from '../components/PageHeroVideo';
 
 export const metadata: Metadata = {
-  title: 'Landscaping Services in Collingwood & Georgian Bay',
+  title: { absolute: 'Landscaping Services in Meaford, Collingwood & Georgian Bay' },
   description:
-    'Georgian Edge Inc. services in Collingwood, Thornbury, Meaford, The Blue Mountains & Georgian Bay: garden cleanups, mulch installation, landscape builds and refreshes, planting, pruning, property management, cottage support, and aerial property photography.',
+    'Landscaping services in Meaford, Collingwood, Thornbury & Georgian Bay: garden cleanups, landscape builds & refreshes, planting, pruning & winter check-ins.',
   alternates: { canonical: '/services' },
   openGraph: {
-    title: 'Services | Georgian Edge Inc.',
+    title: 'Landscaping Services in Meaford, Collingwood & Georgian Bay',
     url: '/services',
     description:
-      'Garden cleanups, landscape refreshes, planting, pruning, property management, cottage support, and aerial property photography around Georgian Bay.',
+      'Garden cleanups, landscape refreshes, planting, pruning, property management, winter check-ins, cottage support & aerial photography around Georgian Bay.',
     images: [
       {
         url: '/photos/stephen-uploaded/georgian-edge-owned-02.jpg',
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Services | Georgian Edge Inc.',
+    title: 'Landscaping Services in Meaford, Collingwood & Georgian Bay',
     description:
-      'Garden cleanups, landscape refreshes, planting, pruning, property management, cottage support, and aerial property photography around Georgian Bay.',
+      'Garden cleanups, landscape refreshes, planting, pruning, property management, winter check-ins, cottage support & aerial photography around Georgian Bay.',
     images: ['/photos/stephen-uploaded/georgian-edge-owned-02.jpg'],
   },
 };
@@ -89,7 +89,12 @@ const serviceFaqs = [
   {
     question: 'Which areas do you serve?',
     answer:
-      'Georgian Edge serves Georgian Bay-area properties, including Collingwood, The Blue Mountains, Thornbury, Meaford, Clearview, and surrounding cottage and country property areas.',
+      'Georgian Edge is based in Meaford and serves Collingwood, The Blue Mountains, Thornbury, Clearview, and surrounding Georgian Bay cottage and country property areas.',
+  },
+  {
+    question: 'How do I get a quote or book work?',
+    answer:
+      'Send a request through the request-work page on this site or call 705-441-1215. Most jobs start with a walk of the property and a quick conversation about what needs attention, then Georgian Edge puts together a practical scope and price before any work starts — no generic packages.',
   },
 ];
 
@@ -174,8 +179,8 @@ export default function ServicesPage() {
         <SiteNav />
         <div className="wrap pageHeroInner">
           <p className="eyebrow">Services</p>
-          <h1 className="serif">Outdoor property care and management with a sharper Georgian Bay feel.</h1>
-          <p className="lead">Georgian Edge focuses on garden cleanups, landscape builds and refreshes, planting, pruning, property inspections, aerial property photography, and property management — not basic lawn mowing.</p>
+          <h1 className="serif">Landscaping and property care services for Georgian Bay homes and cottages.</h1>
+          <p className="lead">Georgian Edge focuses on garden cleanups, landscape builds and refreshes, planting, pruning, property inspections, aerial property photography, and property management for properties in Meaford, Collingwood, Thornbury, The Blue Mountains, and Clearview — not basic lawn mowing.</p>
         </div>
       </section>
 
