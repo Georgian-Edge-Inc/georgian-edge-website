@@ -1,15 +1,16 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import type { Metadata } from 'next';
 import SiteNav from '../components/SiteNav';
 import PageHeroVideo from '../components/PageHeroVideo';
 
 export const metadata: Metadata = {
-  title: 'Gallery | Georgian Bay Landscape & Property Care Photos',
+  title: { absolute: 'Landscaping Project Gallery | Georgian Edge Inc.' },
   description:
-    'View Georgian Edge Inc. project photos showing garden cleanups, edging, stonework, planting, landscape builds, property refreshes, and outdoor property care around Georgian Bay.',
+    'Project photos from Georgian Edge Inc. — garden cleanups, edging, stonework, planting & landscape refreshes at homes & cottages around Georgian Bay.',
   alternates: { canonical: '/gallery' },
   openGraph: {
-    title: 'Gallery | Georgian Edge Inc.',
+    title: 'Landscaping Project Gallery | Georgian Edge Inc.',
     url: '/gallery',
     description:
       'Real Georgian Edge project photos from garden beds, cleanups, landscape refreshes, and outdoor property care.',
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Gallery | Georgian Edge Inc.',
+    title: 'Landscaping Project Gallery | Georgian Edge Inc.',
     description:
       'Real Georgian Edge project photos from garden beds, cleanups, landscape refreshes, and outdoor property care.',
     images: ['/photos/stephen-uploaded/georgian-edge-owned-20.jpg'],
@@ -135,7 +136,7 @@ export default function GalleryPage() {
         <SiteNav />
         <div className="wrap pageHeroInner">
           <p className="eyebrow">Gallery</p>
-          <h1 className="serif">Real Georgian Edge work, from garden beds to property refreshes.</h1>
+          <h1 className="serif">Real Georgian Edge landscaping work, from garden beds to property refreshes.</h1>
           <p className="lead">A growing collection of Georgian Edge-owned project photos showing cleanups, edging, stonework, planting, landscape builds, refreshes, and outdoor property care.</p>
         </div>
       </section>
@@ -154,6 +155,16 @@ export default function GalleryPage() {
             <Image src={photo.src} alt={photo.alt} width={900} height={1200} />
           </figure>
         ))}
+      </section>
+
+      <section className="cta wrap">
+        <h2 className="serif">Want your property in the next set of photos?</h2>
+        <p>Georgian Edge does this kind of work across Meaford, Collingwood, Thornbury, The Blue Mountains, and the wider Georgian Bay area.</p>
+        <div className="contactActions">
+          <Link className="btn primary" href="/request-work">Request work</Link>
+          <Link className="contactLink" href="/services">View our services</Link>
+          <Link className="contactLink" href="/service-areas">See where we work</Link>
+        </div>
       </section>
     </main>
   );
