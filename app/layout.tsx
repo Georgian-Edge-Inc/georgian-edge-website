@@ -28,6 +28,10 @@ export const metadata: Metadata = {
     'cottage property management',
     'property management Meaford',
     'winter property check-ins Georgian Bay',
+    'Christmas light installation Meaford',
+    'Christmas light installation Collingwood',
+    'greenhouse maintenance Georgian Bay',
+    'winter property checks',
     'aerial property photography',
   ],
   applicationName: 'Georgian Edge Inc.',
@@ -152,6 +156,9 @@ const siteSchema = {
           'Property management',
           'Seasonal opening & closing',
           'Winter property check-ins',
+          'Christmas light installation',
+          'Winter property checks',
+          'Greenhouse checks & maintenance',
           'Aerial property photography',
         ].map((serviceName) => ({
           '@type': 'Offer',
@@ -185,9 +192,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <div className="announceBar">
           <div className="wrap announceBarInner">
-            <p className="announceBarText">Fall cleanups are wrapping up — winter property check-ins are now open for empty homes &amp; cottages</p>
+            <p className="announceBarText">Now booking for winter — Christmas light installation, winter property check-ins &amp; greenhouse care</p>
             <div className="announceBarActions">
-              <a className="announceBarBtn" href="/request-work">Book a winter check-in</a>
+              <a className="announceBarBtn" href="/request-work">Book winter services</a>
               <a className="announceBarCall" href="tel:7054411215">Call 705-441-1215</a>
             </div>
           </div>

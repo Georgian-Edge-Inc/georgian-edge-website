@@ -1,19 +1,19 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { ArrowRight, Camera, Leaf, MapPin, Quote, Sprout, Star, Trees } from 'lucide-react';
+import { ArrowRight, Camera, ClipboardCheck, Leaf, Lightbulb, MapPin, Quote, Sprout, Star, Trees } from 'lucide-react';
 import SiteNav from './components/SiteNav';
 
 export const metadata: Metadata = {
   title: 'Georgian Edge Inc. | Georgian Bay Property Care & Landscaping',
   description:
-    'Property care & landscaping based in Meaford, serving Collingwood, Thornbury & The Blue Mountains — cleanups, landscape refreshes, planting, pruning & winter check-ins.',
+    'Property care & landscaping based in Meaford, serving Collingwood, Thornbury & The Blue Mountains — cleanups, landscape refreshes, planting, pruning, Christmas light installation & winter property and greenhouse checks.',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Georgian Edge Inc. | Georgian Bay Property Care & Landscaping',
     url: '/',
     description:
-      'Property care & landscaping based in Meaford, serving Collingwood, Thornbury & The Blue Mountains — cleanups, landscape refreshes, planting, pruning & winter check-ins.',
+      'Property care & landscaping based in Meaford, serving Collingwood, Thornbury & The Blue Mountains — cleanups, landscape refreshes, planting, pruning, Christmas light installation & winter property and greenhouse checks.',
     images: [
       {
         url: '/photos/stephen-uploaded/georgian-edge-owned-03.jpg',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Georgian Edge Inc. | Georgian Bay Property Care & Landscaping',
     description:
-      'Property care, garden cleanups, landscape refreshes, property management, cottage support & aerial photography in Meaford, Collingwood & Georgian Bay.',
+      'Property care, garden cleanups, landscape refreshes, property management, Christmas light installation, winter property & greenhouse checks, cottage support & aerial photography in Meaford, Collingwood & Georgian Bay.',
     images: ['/photos/stephen-uploaded/georgian-edge-owned-03.jpg'],
   },
 };
@@ -51,7 +51,17 @@ const services = [
   {
     icon: MapPin,
     title: 'Property management',
-    text: 'Reliable cottage and country property support: inspections, winter check-ins, seasonal opening/closing help, outdoor care coordination, and details handled without chasing everything yourself.',
+    text: 'Reliable cottage and country property support: inspections, winter property checks for empty homes and cottages, seasonal opening/closing help, outdoor care coordination, and details handled without chasing everything yourself.',
+  },
+  {
+    icon: Lightbulb,
+    title: 'Christmas light installation',
+    text: 'We hang your Christmas lights safely and neatly — rooflines, peaks, trees and wreaths — and come back in January to take them down and pack them away.',
+  },
+  {
+    icon: Sprout,
+    title: 'Greenhouse checks & maintenance',
+    text: 'Scheduled winter greenhouse visits: watering and plant care, pruning, pest monitoring, and heat and ventilation checks, with photo updates to the owner.',
   },
   {
     icon: Camera,
@@ -305,7 +315,9 @@ export default async function Home() {
             <h1 className="serif">Premium property care, landscaping, and management for Georgian Bay homes and cottages.</h1>
             <p className="lead">
               Garden cleanups, design-forward landscape builds and refreshes, planting, pruning, property management,
-              aerial property photography, and owner support with a clean, established Georgian Bay feel.
+              aerial property photography, and owner support with a clean, established Georgian Bay feel. Through the
+              winter, we also install Christmas lights and keep up regular property and greenhouse check-ins, so homes,
+              cottages, and greenhouses are looked after through the cold months.
             </p>
             <div className="actions">
               <Link className="btn light" href="/request-work">
@@ -337,6 +349,33 @@ export default async function Home() {
           itself. The focus is practical, polished care for owners who want reliable inspections, coordination, and eyes
           on the place when needed.
         </p>
+      </section>
+
+      <section id="winter" className="winterSpot" aria-label="Georgian Edge winter services">
+        <div className="wrap">
+          <p className="eyebrow">Winter at Georgian Edge</p>
+          <h2 className="serif">Booking now for winter.</h2>
+          <div className="winterCards">
+            <article className="winterCard">
+              <Lightbulb size={25} aria-hidden="true" />
+              <h3>Christmas light installation</h3>
+              <p>We hang your lights safely and neatly — rooflines, peaks, trees and wreaths — so you get the glow without the ladder. Come January, we take them down and pack them away for next year.</p>
+              <Link className="winterLink" href="/request-work">Book light installation <ArrowRight size={16} /></Link>
+            </article>
+            <article className="winterCard">
+              <ClipboardCheck size={25} aria-hidden="true" />
+              <h3>Winter property checks</h3>
+              <p>Regular check-ins for homes and cottages sitting empty this winter: we walk the property inside and out, check heat, pipes and sump, look for leaks, ice and storm damage, and send you an update with photos after every visit.</p>
+              <Link className="winterLink" href="/request-work">Book a winter check-in <ArrowRight size={16} /></Link>
+            </article>
+            <article className="winterCard">
+              <Sprout size={25} aria-hidden="true" />
+              <h3>Greenhouse checks &amp; maintenance</h3>
+              <p>Scheduled winter visits for greenhouses: watering and plant care, pruning, pest monitoring and control, and a check on heat and ventilation — so plants come through winter healthy and ready for spring.</p>
+              <Link className="winterLink" href="/request-work">Book greenhouse care <ArrowRight size={16} /></Link>
+            </article>
+          </div>
+        </div>
       </section>
 
       <section id="services" className="services wrap" aria-label="Georgian Edge services">
@@ -442,7 +481,7 @@ export default async function Home() {
       <section id="contact" className="cta wrap">
         <Image src="/brand/georgian-edge-brandmark-black.png" alt="" width={86} height={86} />
         <h2 className="serif">Ready to clean up, refresh, inspect, or manage your property?</h2>
-        <p>Tell us what your property needs and we’ll help shape the next step. Fall cleanups are in their final weeks, and winter property check-ins are now open for homes and cottages sitting empty this season.</p>
+        <p>Tell us what your property needs and we’ll help shape the next step. Christmas light installation is booking now, and winter property &amp; greenhouse check-ins are open for the season.</p>
         <div className="contactActions">
           <Link className="btn primary" href="/request-work">Request work</Link>
           <a className="contactLink" href={phoneHref}>{phoneDisplay}</a>

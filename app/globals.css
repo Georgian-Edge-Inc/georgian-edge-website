@@ -108,3 +108,17 @@
 @media(max-width:680px){.announceBarInner{gap:6px 12px;padding-top:9px;padding-bottom:9px}.announceBarText{font-size:.88rem}}
 .mobileContactBar{display:none}
 @media(max-width:860px){.mobileContactBar{display:flex;gap:10px;position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:60}.mobileContactBar a{flex:1;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:14px 12px;font-family:var(--subheading-font);font-weight:900;font-size:.92rem;letter-spacing:.02em;box-shadow:0 14px 34px rgba(24,33,29,.28)}.mobileCall{background:var(--forest);color:#fff;border:1px solid rgba(246,239,223,.35)}.mobileRequest{background:var(--cream);color:var(--forest);border:1px solid rgba(31,61,50,.25)}body{padding-bottom:74px}}
+
+/* Winter services spotlight (homepage, Nov 26, 2026): a forest-to-lake band
+   in the same palette as the Work section, with cream-tinted cards. */
+.winterSpot{background:linear-gradient(135deg,rgba(24,33,29,.97),var(--forest) 52%,var(--lake));color:#fff;padding:82px 0 90px}
+.winterSpot .eyebrow{color:#e3c98d}
+.winterSpot h2{font-size:clamp(2.2rem,4.8vw,4.4rem);line-height:.98;letter-spacing:-.04em;margin:8px 0 34px;max-width:820px}
+.winterCards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.winterCard{background:rgba(246,239,223,.08);border:1px solid rgba(246,239,223,.22);border-radius:24px;padding:28px;backdrop-filter:blur(8px)}
+.winterCard svg{color:#e3c98d}
+.winterCard h3{font-family:var(--subheading-font);font-weight:900;letter-spacing:.03em;font-size:1.35rem;margin:18px 0 8px}
+.winterCard p{line-height:1.62;color:rgba(255,255,255,.86);margin:0 0 18px}
+.winterLink{display:inline-flex;align-items:center;gap:7px;font-family:var(--subheading-font);font-weight:900;font-size:.95rem;color:#e3c98d;border-bottom:1px solid rgba(227,201,141,.55);padding-bottom:5px}
+.winterLink:hover{color:#fff}
+@media(max-width:860px){.winterSpot{padding:56px 0 62px}.winterCards{grid-template-columns:1fr}}
