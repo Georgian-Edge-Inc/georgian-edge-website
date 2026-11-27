@@ -1,19 +1,19 @@
 import Image from 'next/image';
 import type { Metadata } from 'next';
-import { Camera, CheckCircle2, Leaf, MapPin, Sprout, Trees } from 'lucide-react';
+import { Camera, CheckCircle2, Leaf, Lightbulb, MapPin, Sprout, Trees } from 'lucide-react';
 import SiteNav from '../components/SiteNav';
 import PageHeroVideo from '../components/PageHeroVideo';
 
 export const metadata: Metadata = {
   title: { absolute: 'Landscaping Services in Meaford, Collingwood & Georgian Bay' },
   description:
-    'Landscaping services in Meaford, Collingwood, Thornbury & Georgian Bay: garden cleanups, landscape builds & refreshes, planting, pruning & winter check-ins.',
+    'Landscaping services in Meaford, Collingwood, Thornbury & Georgian Bay: garden cleanups, landscape builds & refreshes, planting, pruning, Christmas light installation & winter property and greenhouse checks.',
   alternates: { canonical: '/services' },
   openGraph: {
     title: 'Landscaping Services in Meaford, Collingwood & Georgian Bay',
     url: '/services',
     description:
-      'Garden cleanups, landscape refreshes, planting, pruning, property management, winter check-ins, cottage support & aerial photography around Georgian Bay.',
+      'Garden cleanups, landscape refreshes, planting, pruning, property management, Christmas light installation, winter property & greenhouse checks, cottage support & aerial photography around Georgian Bay.',
     images: [
       {
         url: '/photos/stephen-uploaded/georgian-edge-owned-02.jpg',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Landscaping Services in Meaford, Collingwood & Georgian Bay',
     description:
-      'Garden cleanups, landscape refreshes, planting, pruning, property management, winter check-ins, cottage support & aerial photography around Georgian Bay.',
+      'Garden cleanups, landscape refreshes, planting, pruning, property management, Christmas light installation, winter property & greenhouse checks, cottage support & aerial photography around Georgian Bay.',
     images: ['/photos/stephen-uploaded/georgian-edge-owned-02.jpg'],
   },
 };
@@ -55,7 +55,19 @@ const services = [
     icon: MapPin,
     title: 'Property management',
     text: 'Reliable cottage and country property support for owners who need inspections, seasonal opening/closing help, outdoor care coordination, and details handled without chasing everything themselves.',
-    bullets: ['Property inspections and check-ins', 'Winter check-ins for homes and cottages sitting empty', 'Seasonal opening and closing support', 'Outdoor care coordination'],
+    bullets: ['Property inspections and check-ins', 'Winter property checks for empty homes and cottages', 'Greenhouse checks & maintenance coordination', 'Seasonal opening and closing support', 'Outdoor care coordination'],
+  },
+  {
+    icon: Lightbulb,
+    title: 'Christmas light installation',
+    text: 'We hang your Christmas lights safely and neatly, so you get the glow without the ladder — and in January we come back to take them down and pack them away for next year.',
+    bullets: ['Rooflines, peaks, trees, wreaths and porch displays', 'Neat, safely secured installation — no ladders for you', 'January takedown and pack-away for next year', 'Timers set so lights come on and off on schedule'],
+  },
+  {
+    icon: Sprout,
+    title: 'Greenhouse checks & maintenance',
+    text: 'Scheduled winter visits that keep greenhouses watered, pruned, pest-checked, and running properly, so plants come through the cold months healthy and ready for spring.',
+    bullets: ['Scheduled winter greenhouse visits', 'Watering, pruning and plant care', 'Pest monitoring and natural control', 'Heat and ventilation checks, with photo updates to the owner'],
   },
   {
     icon: Camera,
@@ -80,6 +92,16 @@ const serviceFaqs = [
     question: 'Can you help if I am not at the property full time?',
     answer:
       'Yes. Cottage and country property owners can request inspections, seasonal opening or closing support, outdoor care coordination, progress photos, and help prioritizing what needs attention first.',
+  },
+  {
+    question: 'Do you install Christmas lights?',
+    answer:
+      'Yes. Georgian Edge installs Christmas lights for homes and cottages in Meaford, Thornbury, Collingwood, and The Blue Mountains — rooflines, peaks, trees, wreaths, and porch displays, hung safely and neatly with timers set. In January we come back, take them down, and pack them away for next year.',
+  },
+  {
+    question: 'Can you look after our greenhouse over the winter?',
+    answer:
+      'Yes. Georgian Edge makes scheduled winter greenhouse visits: watering and plant care, pruning, pest monitoring and natural control, and checks on heat and ventilation — with photo updates sent to the owner after visits, so you know the plants are coming through winter well.',
   },
   {
     question: 'Do you offer winter property check-ins for empty homes and cottages?',
@@ -180,7 +202,7 @@ export default function ServicesPage() {
         <div className="wrap pageHeroInner">
           <p className="eyebrow">Services</p>
           <h1 className="serif">Landscaping and property care services for Georgian Bay homes and cottages.</h1>
-          <p className="lead">Georgian Edge focuses on garden cleanups, landscape builds and refreshes, planting, pruning, property inspections, aerial property photography, and property management for properties in Meaford, Collingwood, Thornbury, The Blue Mountains, and Clearview — not basic lawn mowing.</p>
+          <p className="lead">Georgian Edge focuses on garden cleanups, landscape builds and refreshes, planting, pruning, property inspections, aerial property photography, and property management for properties in Meaford, Collingwood, Thornbury, The Blue Mountains, and Clearview — not basic lawn mowing. In winter, that also means Christmas light installation and regular property and greenhouse check-ins.</p>
         </div>
       </section>
 
