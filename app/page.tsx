@@ -34,6 +34,11 @@ export const metadata: Metadata = {
 
 const services = [
   {
+    icon: MapPin,
+    title: 'Property management',
+    text: 'Reliable cottage and country property support: inspections, winter property checks for empty homes and cottages, seasonal opening/closing help, outdoor care coordination, and details handled without chasing everything yourself.',
+  },
+  {
     icon: Leaf,
     title: 'Garden cleanups',
     text: 'Seasonal resets, bed cleanup, edging, soil prep, and detail work that makes the whole property feel cared for.',
@@ -47,11 +52,6 @@ const services = [
     icon: Sprout,
     title: 'Planting & pruning',
     text: 'Thoughtful planting, pruning, and ongoing garden maintenance that fits the property instead of fighting it.',
-  },
-  {
-    icon: MapPin,
-    title: 'Property management',
-    text: 'Reliable cottage and country property support: inspections, winter property checks for empty homes and cottages, seasonal opening/closing help, outdoor care coordination, and details handled without chasing everything yourself.',
   },
   {
     icon: Lightbulb,
@@ -316,8 +316,8 @@ export default async function Home() {
             <p className="lead">
               Garden cleanups, design-forward landscape builds and refreshes, planting, pruning, property management,
               aerial property photography, and owner support with a clean, established Georgian Bay feel. Through the
-              winter, we also install Christmas lights and keep up regular property and greenhouse check-ins, so homes,
-              cottages, and greenhouses are looked after through the cold months.
+              winter, property management comes first — regular property and greenhouse check-ins, plus Christmas light
+              installation — so homes, cottages, and greenhouses are looked after through the cold months.
             </p>
             <div className="actions">
               <Link className="btn light" href="/request-work">
@@ -357,16 +357,16 @@ export default async function Home() {
           <h2 className="serif">Booking now for winter.</h2>
           <div className="winterCards">
             <article className="winterCard">
+              <ClipboardCheck size={25} aria-hidden="true" />
+              <h3>Property management &amp; winter checks</h3>
+              <p>Our winter property management starts with regular check-ins for homes and cottages sitting empty: we walk the property inside and out, check heat, pipes and sump, look for leaks, ice and storm damage, and send you an update with photos after every visit.</p>
+              <Link className="winterLink" href="/request-work">Book a winter check-in <ArrowRight size={16} /></Link>
+            </article>
+            <article className="winterCard">
               <Lightbulb size={25} aria-hidden="true" />
               <h3>Christmas light installation</h3>
               <p>We hang your lights safely and neatly — rooflines, peaks, trees and wreaths — so you get the glow without the ladder. Come January, we take them down and pack them away for next year.</p>
               <Link className="winterLink" href="/request-work">Book light installation <ArrowRight size={16} /></Link>
-            </article>
-            <article className="winterCard">
-              <ClipboardCheck size={25} aria-hidden="true" />
-              <h3>Winter property checks</h3>
-              <p>Regular check-ins for homes and cottages sitting empty this winter: we walk the property inside and out, check heat, pipes and sump, look for leaks, ice and storm damage, and send you an update with photos after every visit.</p>
-              <Link className="winterLink" href="/request-work">Book a winter check-in <ArrowRight size={16} /></Link>
             </article>
             <article className="winterCard">
               <Sprout size={25} aria-hidden="true" />

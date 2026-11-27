@@ -192,7 +192,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <div className="announceBar">
           <div className="wrap announceBarInner">
-            <p className="announceBarText">Now booking for winter — Christmas light installation, winter property check-ins &amp; greenhouse care</p>
+            <p className="announceBarText">Winter property management &amp; check-ins — plus Christmas light installation and greenhouse care, now booking</p>
             <div className="announceBarActions">
               <a className="announceBarBtn" href="/request-work">Book winter services</a>
               <a className="announceBarCall" href="tel:7054411215">Call 705-441-1215</a>
