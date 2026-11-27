@@ -34,6 +34,12 @@ export const metadata: Metadata = {
 
 const services = [
   {
+    icon: MapPin,
+    title: 'Property management',
+    text: 'Reliable cottage and country property support for owners who need inspections, seasonal opening/closing help, outdoor care coordination, and details handled without chasing everything themselves.',
+    bullets: ['Property inspections and check-ins', 'Winter property checks for empty homes and cottages', 'Greenhouse checks & maintenance coordination', 'Seasonal opening and closing support', 'Outdoor care coordination'],
+  },
+  {
     icon: Leaf,
     title: 'Garden cleanups',
     text: 'Seasonal resets for beds, edges, weeds, debris, old growth, soil prep, and the detail work that makes a property feel cared for again.',
@@ -50,12 +56,6 @@ const services = [
     title: 'Planting & pruning',
     text: 'Thoughtful planting, pruning, and ongoing garden maintenance that fits the property instead of fighting it.',
     bullets: ['Planting refreshes', 'Shrub and perennial pruning', 'Garden maintenance visits'],
-  },
-  {
-    icon: MapPin,
-    title: 'Property management',
-    text: 'Reliable cottage and country property support for owners who need inspections, seasonal opening/closing help, outdoor care coordination, and details handled without chasing everything themselves.',
-    bullets: ['Property inspections and check-ins', 'Winter property checks for empty homes and cottages', 'Greenhouse checks & maintenance coordination', 'Seasonal opening and closing support', 'Outdoor care coordination'],
   },
   {
     icon: Lightbulb,
